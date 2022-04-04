@@ -1,0 +1,347 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/semester5/DLDlab/hw/4/codes
+vAdder
+Z0 !s110 1649049405
+!i10b 1
+!s100 5d8YfMJ8[XOP?k=fJc6O12
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I24jCEP=nCIVhoHf[lbJ[^3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dF:/semester6/CAD/hw/1/code
+w1649005128
+8F:/semester6/CAD/hw/1/code/Adder.v
+FF:/semester6/CAD/hw/1/code/Adder.v
+!i122 29
+L0 2 15
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1649049404.000000
+!s107 F:/semester6/CAD/hw/1/code/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Adder.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@adder
+vALU
+R0
+!i10b 1
+!s100 L9O8fC1ZM[ef9JaW?zIhe1
+R1
+IP;zIdD<6X^I7Yn0dkJ[gZ3
+R2
+R3
+w1649005304
+8F:/semester6/CAD/hw/1/code/ALU.v
+FF:/semester6/CAD/hw/1/code/ALU.v
+!i122 30
+L0 2 29
+R4
+r1
+!s85 0
+31
+Z7 !s108 1649049405.000000
+!s107 F:/semester6/CAD/hw/1/code/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/ALU.v|
+!i113 1
+R5
+R6
+n@a@l@u
+vController
+R0
+!i10b 1
+!s100 =zNg43COG^lf26KURC;4A2
+R1
+I:FcY^mPiF27VKeGaF4cSh1
+R2
+R3
+w1649006023
+8F:/semester6/CAD/hw/1/code/Controller.v
+FF:/semester6/CAD/hw/1/code/Controller.v
+!i122 31
+L0 2 162
+R4
+r1
+!s85 0
+31
+R7
+!s107 F:/semester6/CAD/hw/1/code/Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Controller.v|
+!i113 1
+R5
+R6
+n@controller
+vCounter
+Z8 !s110 1649049406
+!i10b 1
+!s100 ;G`_9`mLOX`gBl5oM^KE^1
+R1
+IRY`i>hKbYj9AW4Z_73KJb3
+R2
+R3
+w1649006148
+8F:/semester6/CAD/hw/1/code/Counter.v
+FF:/semester6/CAD/hw/1/code/Counter.v
+!i122 32
+L0 2 30
+R4
+r1
+!s85 0
+31
+R7
+!s107 F:/semester6/CAD/hw/1/code/Counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Counter.v|
+!i113 1
+R5
+R6
+n@counter
+vDatapath
+R8
+!i10b 1
+!s100 YeZQblR`N__6>JDdLRi3M1
+R1
+I?oI4CIeHLl@HPI1@DfNd31
+R2
+R3
+w1649006227
+8F:/semester6/CAD/hw/1/code/Datapath.v
+FF:/semester6/CAD/hw/1/code/Datapath.v
+!i122 33
+L0 2 120
+R4
+r1
+!s85 0
+31
+Z9 !s108 1649049406.000000
+!s107 F:/semester6/CAD/hw/1/code/Datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Datapath.v|
+!i113 1
+R5
+R6
+n@datapath
+vIJMux
+R8
+!i10b 1
+!s100 LSd=hZ:d=VOZ2ZIm>SQz[1
+R1
+IMGJ7DIUHK7CbzA;408L?d1
+R2
+R3
+w1649006275
+8F:/semester6/CAD/hw/1/code/IJMux.v
+FF:/semester6/CAD/hw/1/code/IJMux.v
+!i122 34
+L0 2 27
+R4
+r1
+!s85 0
+31
+R9
+!s107 F:/semester6/CAD/hw/1/code/IJMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/IJMux.v|
+!i113 1
+R5
+R6
+n@i@j@mux
+vIniter
+R8
+!i10b 1
+!s100 P>6Tb`@o@;;<O1>L>LFgY1
+R1
+I]f==Hei^J5SQ>RhJaWLJ83
+R2
+R3
+w1649006310
+8F:/semester6/CAD/hw/1/code/Initer.v
+FF:/semester6/CAD/hw/1/code/Initer.v
+!i122 35
+L0 2 24
+R4
+r1
+!s85 0
+31
+R9
+!s107 F:/semester6/CAD/hw/1/code/Initer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Initer.v|
+!i113 1
+R5
+R6
+n@initer
+vMemoryBlock
+Z10 !s110 1649049407
+!i10b 1
+!s100 9Za0O2id5K_U3Bd<S[j3]0
+R1
+I]Th2JRQUf:Tmg_]QH_KP;1
+R2
+R3
+w1649006383
+8F:/semester6/CAD/hw/1/code/MemoryBlock.v
+FF:/semester6/CAD/hw/1/code/MemoryBlock.v
+!i122 36
+L0 2 36
+R4
+r1
+!s85 0
+31
+R9
+!s107 F:/semester6/CAD/hw/1/code/MemoryBlock.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/MemoryBlock.v|
+!i113 1
+R5
+R6
+n@memory@block
+vMultiplexer
+R10
+!i10b 1
+!s100 6>b8QLQJ]fIMhJWO1<f0_0
+R1
+I[`n@SfaQfVc:<gBe`n83d1
+R2
+R3
+w1649006578
+8F:/semester6/CAD/hw/1/code/Multiplexer.v
+FF:/semester6/CAD/hw/1/code/Multiplexer.v
+!i122 37
+L0 2 52
+R4
+r1
+!s85 0
+31
+Z11 !s108 1649049407.000000
+!s107 F:/semester6/CAD/hw/1/code/Multiplexer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Multiplexer.v|
+!i113 1
+R5
+R6
+n@multiplexer
+vMux
+R10
+!i10b 1
+!s100 QET_QRDYJd=j>k72j62UZ3
+R1
+I>le3CVLD`7OjZC5Z1VHP]2
+R2
+R3
+w1648661101
+8F:/semester6/CAD/hw/1/code/Mux.v
+FF:/semester6/CAD/hw/1/code/Mux.v
+!i122 38
+Z12 L0 2 18
+R4
+r1
+!s85 0
+31
+R11
+!s107 F:/semester6/CAD/hw/1/code/Mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Mux.v|
+!i113 1
+R5
+R6
+n@mux
+vRegister
+R10
+!i10b 1
+!s100 HZFf@FEbLIfEn<lf7K6;P0
+R1
+IcL6h<O``JTa<9?Qm7Ab>;0
+R2
+R3
+w1649006761
+8F:/semester6/CAD/hw/1/code/Register.v
+FF:/semester6/CAD/hw/1/code/Register.v
+!i122 39
+L0 2 33
+R4
+r1
+!s85 0
+31
+R11
+!s107 F:/semester6/CAD/hw/1/code/Register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Register.v|
+!i113 1
+R5
+R6
+n@register
+vShifter
+R10
+!i10b 1
+!s100 MU:Fn7TE3bEUfb8dQ8`lL1
+R1
+IS_@2KBO6?>4UPZ3WhD4?]0
+R2
+R3
+w1649006803
+8F:/semester6/CAD/hw/1/code/Shifter.v
+FF:/semester6/CAD/hw/1/code/Shifter.v
+!i122 40
+L0 2 26
+R4
+r1
+!s85 0
+31
+R11
+!s107 F:/semester6/CAD/hw/1/code/Shifter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Shifter.v|
+!i113 1
+R5
+R6
+n@shifter
+vSubtractor
+!s110 1649049408
+!i10b 1
+!s100 jkGGI>B5nAa0PZH0:9=aE3
+R1
+I7@8?FUX2b@S[8mn^F>jlQ1
+R2
+R3
+w1649006838
+8F:/semester6/CAD/hw/1/code/Subtractor.v
+FF:/semester6/CAD/hw/1/code/Subtractor.v
+!i122 41
+R12
+R4
+r1
+!s85 0
+31
+R11
+!s107 F:/semester6/CAD/hw/1/code/Subtractor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/Subtractor.v|
+!i113 1
+R5
+R6
+n@subtractor
+vTB
+!s110 1649050943
+!i10b 1
+!s100 MWQB?mllf0Nla8DhaKW3T2
+R1
+IG7gFn^GPbnWfB<<MPNObV2
+R2
+R3
+w1649050937
+8F:/semester6/CAD/hw/1/code/TB.v
+FF:/semester6/CAD/hw/1/code/TB.v
+!i122 44
+L0 4 82
+R4
+r1
+!s85 0
+31
+!s108 1649050943.000000
+!s107 F:/semester6/CAD/hw/1/code/TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/1/code/TB.v|
+!i113 1
+R5
+R6
+n@t@b

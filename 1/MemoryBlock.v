@@ -11,7 +11,7 @@ module MemoryBlock (
     out
 );
     parameter size = 5;
-    parameter memSize = 25;
+    parameter memsize = 25;
 
     input clk, rst;
     input init;
@@ -22,7 +22,7 @@ module MemoryBlock (
 
     output out;
 
-    reg [memSize-1:0]mem;
+    reg [memsize-1:0]mem;
 
     always @(posedge clk, posedge rst) begin
         if(write)

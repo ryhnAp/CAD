@@ -22,17 +22,20 @@ module Controller (
     fbeq,
     isArith,
     enable,
-    update
+    update,
+    readLine
 
 );
+    parameter size = 5;
+    parameter memsize = 25;
     
     input clk, rst;
     input start, sign3j, signeq, done, sign, eq;
 
     output reg IJen, ALUop, read, write, initLine;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update;
-    output reg [size-1:0]val;
     output reg [memsize-1:0]line;
+    output reg readLine;
 
     parameter [3:0] 
         Start = 4'd0,
@@ -68,73 +71,92 @@ module Controller (
     end
 
     always @(ps, start, sign3j, signeq, done, sign, eq) begin
-        Start:      start ? Idle : Start;
-        Idle:       Ydimension;
-        Ydimension: coutCount ? Ready : Line;
-        Line:       Shift3;
-        Shift3:     sign3j ? Add3j : Sub3j;
-        Sub3j:      sign3j ? Add3j : Sub3j;
-        Add3j:      Arithmetic;
-        Arithmetic: signeq ? Add : Sub;
-        Sub:        signeq ? Add : Sub;
-        Add:        Check;
-        Check:      eq ? Add : Prepared;
-        Prepared:   Store;
-        Store:      Updater;
-        Updater:    done ? Next : Shift3;
-        Next:       Ydimension;
-        Ready:      Ready;
+        case (ps)
+            Start:      ns = start ? Idle : Start;
+            Idle:       ns = Ydimension;
+            Ydimension: ns = coutCount ? Ready : Line;
+            Line:       ns = Shift3;
+            Shift3:     ns = sign3j ? Add3j : Sub3j;
+            Sub3j:      ns = sign3j ? Add3j : Sub3j;
+            Add3j:      ns = Arithmetic;
+            Arithmetic: ns = signeq ? Add : Sub;
+            Sub:        ns = signeq ? Add : Sub;
+            Add:        ns = Check;
+            Check:      ns = eq ? Add : Prepared;
+            Prepared:   ns = Store;
+            Store:      ns = Updater;
+            Updater:    ns = done ? Next : Shift3;
+            Next:       ns = Ydimension;
+            Ready:      ns = Start;
+            default: ns = Start;
+        endcase
     end
 
     always @(ps) begin
-        Start:      begin
-            //nothing
-        end
-        Idle:       begin
-            loadCount = 1'd1;
-        end
-        Ydimension: begin
-            //nothing
-        end
-        Line:       begin
-            
-        end
-        Shift3:     begin
-            
-        end
-        Sub3j:      begin
-            
-        end
-        Add3j:      begin
-            
-        end
-        Arithmetic: begin
-            
-        end
-        Sub:        begin
-            
-        end
-        Add:        begin
-            
-        end
-        Check:      begin
-            
-        end
-        Prepared:   begin
-            
-        end
-        Store:      begin
-            
-        end
-        Updater:    begin
-            
-        end
-        Next:       begin
-            
-        end
-        Ready:     begin
-            
-        end 
+        {IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, line, readLine} = 0;
+        case (ps)
+            Start:      begin
+                //nothing
+            end
+            Idle:       begin
+                loadCount = 1'd1;
+            end
+            Ydimension: begin
+                //nothing
+                readLine = 1'b1;
+            end
+            Line:       begin
+                IJen = 1'b1;
+                read = 1'b1;
+                initLine = 1'b1;
+                writeVal = 1'b1;
+            end
+            Shift3:     begin
+                //nothing
+                
+            end
+            Sub3j:      begin
+                ALUop =  1'b0;
+                fb3j = 1'b1;
+            end
+            Add3j:      begin
+                ALUop =  1'b1;
+                fb3j = 1'b1;
+
+            end
+            Arithmetic: begin
+                isArith = 1'b1;
+            end
+            Sub:        begin
+                fbeq = 1'b1;
+                ALUop =  1'b0;
+
+            end
+            Add:        begin
+                fbeq = 1'b1;
+                ALUop =  1'b1;
+                
+            end
+            Check:      begin
+                enable = 1'b1;
+            end
+            Prepared:   begin
+                IJregen = 1'b1;
+            end
+            Store:      begin // fix algo
+                update = 1'b1;
+            end
+            Updater:    begin
+                write = 1'b1;
+                
+            end
+            Next:       begin
+                enCount = 1'b1;
+            end
+            Ready:     begin
+                //nothing
+            end 
+        endcase
     end
 
 

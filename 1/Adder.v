@@ -9,8 +9,8 @@ module Adder (
     input [size-1:0]i1;
     input [size-1:0]i2;
 
-    output [size:0]o;
+    output [size:0]a;
 
-    assign o = i1 + i2;
+    assign a = i1 + i2;
 
 endmodule

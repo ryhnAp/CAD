@@ -12,40 +12,42 @@ module Multiplexer (
    input [size-1:0]res;
    input enable;
 
-   output [size-1:0]o1;
-   output [size-1:0]o2;
-   output [size-1:0]o3;
-   output [size-1:0]o4;
+   output reg [size-1:0]o1;
+   output reg [size-1:0]o2;
+   output reg [size-1:0]o3;
+   output reg [size-1:0]o4;
 
    parameter one = 1;
    parameter three = 3;
-   parameter z_ = z;
+   parameter z_ =  {size{1'bz}};
 
-   case (res)
-      one: begin
-         o1 = enable ? one : z_;
-         o2 = z_;
-         o3 = z_;
-         o4 = res;
-      end
-      three: begin
-         o1 = z_;
-         o2 = enable ? one : z_;
-         o3 = z_;
-         o4 = res;
-      end
-      z_: begin
-         o1 = z_;
-         o2 = z_;
-         o3 = z_;
-         o4 = res;
-      end
-      default: begin
-         o1 = z_;
-         o2 = z_;
-         o3 = z_;
-         o4 = res;    
-      end
-   endcase
+   always @(*) begin
+      case (res)
+         one: begin
+            o1 = enable ? one : z_;
+            o2 = z_;
+            o3 = z_;
+            o4 = res;
+         end
+         three: begin
+            o1 = z_;
+            o2 = enable ? one : z_;
+            o3 = z_;
+            o4 = res;
+         end
+         z_: begin
+            o1 = z_;
+            o2 = z_;
+            o3 = z_;
+            o4 = res;
+         end
+         default: begin
+            o1 = z_;
+            o2 = z_;
+            o3 = z_;
+            o4 = res;    
+         end
+      endcase
+   end
 
 endmodule

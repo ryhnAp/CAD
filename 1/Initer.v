@@ -16,7 +16,7 @@ module Initer (
 
     always @(posedge clk, posedge rst) begin
         if(rst)
-            outputData = {size{1'b0}};
+            outreg = {size{1'b0}};
         
         else if (en)
             outreg = val;

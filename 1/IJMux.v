@@ -14,14 +14,15 @@ module IJMux (
         THREE = 3'b011,
         FOUR = 3'b100;
 
-    case (select)
-        ZERO:  out = TWO;
-        ONE:   out = THREE;
-        TWO:   out = FOUR;
-        THREE: out = ZERO;
-        FOUR:  out = ONE;
-        default: 
-    endcase
+    always @(*) begin        
+        case (select)
+            ZERO:  out = TWO;
+            ONE:   out = THREE;
+            TWO:   out = FOUR;
+            THREE: out = ZERO;
+            FOUR:  out = ONE;
+        endcase
+    end
 
 
 endmodule

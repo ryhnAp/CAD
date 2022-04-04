@@ -23,14 +23,13 @@ module Datapath (
     eq
 );
     parameter size = 5;
-    parameter memSize = 25;
-    
+    parameter memsize = 25;
+
     parameter initValIJ = 3;
 
     input clk, rst;
     input IJen, ALUop, read, write, initLine;
     input writeVal, IJregen, fbeq, fb3j, isArith, enable, update;
-    input [size-1:0]val;
     input [memsize-1:0]line;
 
     output sign3j, signeq, done, sign, eq;
@@ -59,7 +58,7 @@ module Datapath (
     wire [size-1:0]o3;
     wire [size-1:0]o4;
 
-    wire val;
+    // wire val;
     wire sign;
     wire newVal;
     wire regVal;
@@ -79,7 +78,7 @@ module Datapath (
     Adder #(5) indexAdder(.i1(iii), .i2({2'b00, jIdx}), .a(memIdx));
 
     MemoryBlock #(5,25) MB(.clk(clk), .rst(rst), .init(initLine), .line(line),
-        .index(memIdx), .val(val), .write(write), .read(read), .out(newVal));
+        .index(memIdx), .val(regVal), .write(write), .read(read), .out(newVal));
 
     Register valRegister(.clk(clk), .rst(rst), .ld(writeVal), .inputData(newVal), 
         .inputData_({2'bz}), .outputData(regVal), .outputData_({2'bz}));
@@ -87,11 +86,11 @@ module Datapath (
     Register newJRegister(.clk(clk), .rst(rst), .ld(IJregen), .inputData(i), 
         .inputData_({2'bz}), .outputData(jReg), .outputData_({2'bz}));
 
-    Shifter #(5) iIdxShifter(.data({2'b00, jReg}), .coefficient({2'b00}), .shifted(jj));
+    Shifter #(5) jIdxShifter(.data({2'b00, jReg}), .coefficient({2'b00}), .shifted(jj));
 
     Adder #(5) jRegAdder(.i1(jj), .i2({2'b00, jReg}), .a(jjReg));
 
-    Adder #(5) jRegDec5Adder(.i1(jjReg), .i2({5'b11011}), .a({sign3j, jjRegDec})); // decrease 5 for sign
+    Adder #(5) jRegDec5Adder(.i1(jjReg), .i2({5'b11011}), .a({sign3j, jjRegDec})); // decrease 5 for sign j reg part
 
     Mux #(5) Jfeedback(.i1(jjRegDec), .i2(ALUout), .sel(fb3j), .out(mux3j));
 

@@ -18,10 +18,13 @@ module ALU (
     output reg [size:0]res;
     output sign;
 
-    case (ALUop)
-        ZERO: res = iseq ? (in2 - 5) : (in1 - 5);
-        ONE:  res = iseq ? (in2 + 5) : (in1 + 5);
-    endcase
+    always @(*) begin        
+        case (ALUop)
+            ZERO: res = iseq ? (in2 - 5) : (in1 - 5);
+            ONE:  res = iseq ? (in2 + 5) : (in1 + 5);
+        endcase
+    end
+    
     assign sign = res[size];
 
 endmodule

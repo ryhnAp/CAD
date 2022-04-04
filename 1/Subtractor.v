@@ -12,8 +12,8 @@ module Subtractor (
     input [size-1:0]i1;
     input [size-1:0]i2;
 
-    output [size:0]o;
+    output [size:0]out;
 
-    assign o = (en == 1'b1) ? i1 - i2 : o;
+    assign out = (en == 1'b1) ? i1 - i2 : out;
 
 endmodule

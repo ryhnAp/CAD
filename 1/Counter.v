@@ -23,7 +23,7 @@ module Counter (
     		PO <= initld;
 		else
         	PO <= en ? PO+1 : PO;
-    		end
+
     end
 
     assign co = en ? &PO : 1'b0;

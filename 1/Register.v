@@ -19,16 +19,16 @@ module Register (
     output reg outputData_;
 
     always @(posedge clk, posedge rst) begin
-        if(rst)
-        {
+        if(rst) begin
             outputData_ = 1'b0;
             outputData = {size{1'b0}};
-        }
-        else if (ld)
-        {
+        end
+
+        else if (ld) begin
             outputData_ = inputData_;
             outputData = inputData;
-        }
+        end
+        
     end
 
 endmodule
