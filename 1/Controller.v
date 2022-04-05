@@ -34,7 +34,7 @@ module Controller (
 
     output reg IJen, ALUop, read, write, initLine;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update;
-    output reg [memsize-1:0]line;
+    input [memsize-1:0]line;
     output reg readLine;
 
     parameter [3:0] 
@@ -93,7 +93,7 @@ module Controller (
     end
 
     always @(ps) begin
-        {IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, line, readLine} = 0;
+        {IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine} = 0;
         case (ps)
             Start:      begin
                 //nothing

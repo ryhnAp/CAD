@@ -12,21 +12,21 @@ module Register (
 
     input clk, rst;
     input ld;
-    input [size-1:0]inputData;
-    input inputData_;
+    input [size-1:0]inputData_;
+    input inputData;
 
-    output reg [size-1:0]outputData;
-    output reg outputData_;
+    output reg [size-1:0]outputData_;
+    output reg outputData;
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
-            outputData_ = 1'b0;
-            outputData = {size{1'b0}};
+            outputData = 1'b0;
+            outputData_ = {size{1'b0}};
         end
 
         else if (ld) begin
-            outputData_ = inputData_;
             outputData = inputData;
+            outputData_ = inputData_;
         end
         
     end

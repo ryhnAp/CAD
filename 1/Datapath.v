@@ -58,6 +58,10 @@ module Datapath (
     wire [size-1:0]o3;
     wire [size-1:0]o4;
 
+    wire temp1;
+    wire temp2;
+    wire temp3;
+
     // wire val;
     wire sign;
     wire newVal;
@@ -81,10 +85,10 @@ module Datapath (
         .index(memIdx), .val(regVal), .write(write), .read(read), .out(newVal));
 
     Register valRegister(.clk(clk), .rst(rst), .ld(writeVal), .inputData(newVal), 
-        .inputData_({2'bz}), .outputData(regVal), .outputData_({2'bz}));
+        .inputData_(2'b00), .outputData(regVal), .outputData_(temp1));
 
     Register newJRegister(.clk(clk), .rst(rst), .ld(IJregen), .inputData(i), 
-        .inputData_({2'bz}), .outputData(jReg), .outputData_({2'bz}));
+        .inputData_(2'b00), .outputData(jReg), .outputData_(temp2));
 
     Shifter #(5) jIdxShifter(.data({2'b00, jReg}), .coefficient({2'b00}), .shifted(jj));
 
@@ -98,7 +102,7 @@ module Datapath (
         .iseq(isArith|fbeq), .res(ALUout), .sign(sign));
 
     Register newIRegister(.clk(clk), .rst(rst), .ld(IJregen), .inputData(shiftOut), 
-        .inputData_({2'bz}), .outputData(iReg), .outputData_({2'bz}));
+        .inputData_(2'b00), .outputData(iReg), .outputData_(temp3));
 
     Subtractor #(5) iRegAdder(.i1(j), .i2(ALUout), .en(isArith), .out(subOut));
 
@@ -111,7 +115,7 @@ module Datapath (
 
     assign eq = o1 | o2;
 
-    Shifter #(5) rightShifter(.data(o4), .coefficient({2'b10}), .shifted(shiftOut));
+    Shifter #(5) rightShifter(.data(o4), .coefficient(2'b10), .shifted(shiftOut));
 
     assign done = (shiftOut[0]&jReg[0])&(shiftOut[1]&jReg[1]); 
 
