@@ -28,7 +28,8 @@ module Controller (
     update,
     readLine,
     ldTillPositive,
-    count
+    count,
+    firstread
 );
     parameter size = 5;
     parameter memsize = 25;
@@ -38,7 +39,7 @@ module Controller (
     reg [5:0] count2;
     input [5:0]count;
 
-    output reg IJen, ALUop, read, write, initLine;
+    output reg IJen, ALUop, read, write, initLine, firstread;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
     input [memsize-1:0]line;
     output reg readLine;
@@ -107,7 +108,7 @@ module Controller (
     end
 
     always @(ps) begin
-        {ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine} = 0;
+        {firstread, ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine} = 0;
         case (ps)
             Start:      begin
                 //nothing
@@ -127,7 +128,7 @@ module Controller (
             end
             Store:     begin
                 writeVal = 1'b1;
-                read = 1'b1;
+                firstread = 1'b1;
             end
             Shift3:     begin
                 writeMemReg = 1'b1;

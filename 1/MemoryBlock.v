@@ -9,7 +9,8 @@ module MemoryBlock (
     write, 
     read,
     out, 
-    mem
+    mem,
+    firstread
 );
     parameter size = 5;
     parameter memsize = 25;
@@ -20,7 +21,7 @@ module MemoryBlock (
     wire [size-1:0]ind_new;
     input [memsize-1:0]line;
     input val;
-    input write, read;
+    input write, read, firstread;
 
     output out;
 
@@ -30,12 +31,12 @@ module MemoryBlock (
 
     always @(posedge clk, posedge rst) begin
         if(write)
-            mem[ind_new] <= (ind_new == 5'b01010) ? val: out;
+            mem[ind_new] <= out;
 
         if(init)
             mem = line;
     end
     
-    assign out = (read == 1'b1) ? mem[ind_new] : out;
+    assign out = (firstread == 1'b1) ? mem[ind_new] : (read == 1'b0) ? out: (ind_new == 5'b11000) ? val: mem[ind_new];
 
 endmodule
