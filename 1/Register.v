@@ -4,29 +4,23 @@ module Register (
     rst,
     ld,
     inputData,
-    inputData_,
     outputData,
-    outputData_
 );
-    parameter size = 2;
+    parameter size = 3;
 
     input clk, rst;
     input ld;
-    input [size-1:0]inputData_;
-    input inputData;
+    input [size-1:0]inputData;
 
-    output reg [size-1:0]outputData_;
-    output reg outputData;
+    output reg [size - 1:0] outputData;
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
-            outputData = 1'b0;
-            outputData_ = {size{1'b0}};
+            outputData = {size{1'b0}};
         end
 
         else if (ld) begin
             outputData = inputData;
-            outputData_ = inputData_;
         end
         
     end

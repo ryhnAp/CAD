@@ -26,12 +26,12 @@ module MemoryBlock (
 
     always @(posedge clk, posedge rst) begin
         if(write)
-            mem[index] <= val;
+            mem[24 - index] <= val;
 
         if(init)
             mem = line;
     end
     
-    assign out = (read == 1'b1) ? mem[index] : out;
+    assign out = (read == 1'b1) ? mem[24 - index] : out;
 
 endmodule

@@ -8,11 +8,12 @@ module TB ();
     initial $readmemb("input_0.txt",Mem);
 
     reg clk=1'b0, rst=1'b1;
-    wire IJen, ALUop, read, write, initLine;
-    wire writeVal, IJregen, fbeq, fb3j, isArith, enable, update;
+    wire IJen, ALUop, read, write, initLine, waitCalNexti;
+    wire writeVal, IJregen, fbeq, fb3j, isArith, enable, update, writeMemReg, ldTillPositive;
     wire [4:0]val;
     reg [24:0]line;
     wire readLine;
+    reg start = 1'b0;
 
     wire sign3j, signeq, done, sign, eq;
 
@@ -28,7 +29,9 @@ module TB ();
     done,
     sign,
     eq,
-    
+    waitCalNexti,
+    writeMemReg,
+
     IJen,
     ALUop,
     read,
@@ -42,7 +45,8 @@ module TB ();
     isArith,
     enable,
     update,
-    readLine);
+    readLine,
+    ldTillPositive);
 
     Datapath dp(
     clk,
@@ -59,7 +63,11 @@ module TB ();
     fbeq,
     isArith,
     enable,
+    waitCalNexti,
+    writeMemReg,
+    ldTillPositive,
     update,
+
 
     sign3j,
     signeq,
@@ -70,11 +78,14 @@ module TB ();
     always #20 clk = ~clk;
 
     initial begin
+
         #30 rst = 1'b0;
+        start = 1'b1;
         test = $fopen("input_0.txt", "r");
 
         for(i = 0; i < 64; i= i+1) begin  
-            #300 line = Mem[i];
+            line = Mem[i];
+            #3000;
         end  
         #100;
         $stop;

@@ -10,6 +10,9 @@ module Controller (
     sign,
     eq,
     
+    waitCalNexti,
+    writeMemReg,
+
     IJen,
     ALUop,
     read,
@@ -23,8 +26,8 @@ module Controller (
     isArith,
     enable,
     update,
-    readLine
-
+    readLine,
+    ldTillPositive
 );
     parameter size = 5;
     parameter memsize = 25;
@@ -33,7 +36,7 @@ module Controller (
     input start, sign3j, signeq, done, sign, eq;
 
     output reg IJen, ALUop, read, write, initLine;
-    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update;
+    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
     input [memsize-1:0]line;
     output reg readLine;
 
@@ -55,11 +58,11 @@ module Controller (
         Next = 4'd14,
         Ready = 4'd15;
 
-    reg enCount=0, loadCount=0;
+    reg enCount=0, loadCount=0, first = 0;
     reg [5:0]loadInit = 0; // n times count = 5
     wire coutCount;
 
-    reg [3:0] ps, ns = Start;
+    reg [3:0] ps, ns;
 
     Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
 
@@ -76,13 +79,13 @@ module Controller (
             Idle:       ns = Ydimension;
             Ydimension: ns = coutCount ? Ready : Line;
             Line:       ns = Shift3;
-            Shift3:     ns = sign3j ? Add3j : Sub3j;
-            Sub3j:      ns = sign3j ? Add3j : Sub3j;
+            Shift3:     ns = Sub3j;
+            Sub3j:      ns = ~sign ? Add3j : Sub3j;
             Add3j:      ns = Arithmetic;
-            Arithmetic: ns = signeq ? Add : Sub;
-            Sub:        ns = signeq ? Add : Sub;
+            Arithmetic: ns = Sub;
+            Sub:        ns = Add;
             Add:        ns = Check;
-            Check:      ns = eq ? Add : Prepared;
+            Check:      ns = Prepared;
             Prepared:   ns = Store;
             Store:      ns = Updater;
             Updater:    ns = done ? Next : Shift3;
@@ -93,7 +96,7 @@ module Controller (
     end
 
     always @(ps) begin
-        {IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine} = 0;
+        {ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine} = 0;
         case (ps)
             Start:      begin
                 //nothing
@@ -110,27 +113,30 @@ module Controller (
                 read = 1'b1;
                 initLine = 1'b1;
                 writeVal = 1'b1;
+                IJregen = 1'b1;
             end
             Shift3:     begin
-                //nothing
-                
+                writeMemReg = 1'b1;
+                ldTillPositive =1 'b1;
             end
             Sub3j:      begin
-                ALUop =  1'b0;
-                fb3j = 1'b1;
+                waitCalNexti = 1'b1;
+                ldTillPositive = sign;
+                update = 1'b1;
             end
             Add3j:      begin
-                ALUop =  1'b1;
-                fb3j = 1'b1;
+                IJregen = 1'b1;
 
             end
             Arithmetic: begin
                 isArith = 1'b1;
             end
             Sub:        begin
+                read = 1'b1;
+                writeVal = 1'b1;
+                write = 1'b1;
                 fbeq = 1'b1;
                 ALUop =  1'b0;
-
             end
             Add:        begin
                 fbeq = 1'b1;
@@ -141,13 +147,10 @@ module Controller (
                 enable = 1'b1;
             end
             Prepared:   begin
-                IJregen = 1'b1;
             end
             Store:      begin // fix algo
-                update = 1'b1;
             end
             Updater:    begin
-                write = 1'b1;
                 
             end
             Next:       begin

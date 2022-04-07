@@ -14,6 +14,9 @@ module Datapath (
     fbeq,
     isArith,
     enable,
+    waitCalNexti,
+    writeMemReg,
+    ldTillPositive,
     update,//enable for updating i,j after being checked and update "i"  
 
     sign3j,
@@ -28,98 +31,83 @@ module Datapath (
     parameter initValIJ = 3;
 
     input clk, rst;
-    input IJen, ALUop, read, write, initLine;
-    input writeVal, IJregen, fbeq, fb3j, isArith, enable, update;
+    input IJen, ALUop, read, write, initLine, writeMemReg;
+    input writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, ldTillPositive;
     input [memsize-1:0]line;
 
     output sign3j, signeq, done, sign, eq;
 
-    wire [size-3:0]i;
-    wire [size-3:0]j;
-    wire [size-3:0]iReg;
-    wire [size-3:0]jReg;
-    wire [size-3:0]iIdx;
-    wire [size-3:0]jIdx;
-    wire [size-1:0]ii;
-    wire [size-1:0]iii;
-    wire [size-1:0]memIdx;
-    wire [size-1:0]jj;
-    wire [size-1:0]jjReg;
-    wire [size-1:0]jjRegDec;
-    wire [size-1:0]ALUout;
-    wire [size-1:0]subOut;
-    wire [size-1:0]subDec;
-    wire [size-1:0]shiftOut;
-    wire [size-1:0]mux3j;
-    wire [size-1:0]muxi;
+    wire [2:0]i;
+    wire [2:0]j;
+    wire [4:0]iMult4;
+    wire [2:0]iReg;
+    wire [2:0]jReg;
+    wire [4:0]iMult5;
+    wire [4:0]memIdx;
+    wire [4:0]iMult2;
+    wire [4:0]iMult3;
+    wire [4:0]lastIndex;
+    wire [4:0]iNextMult2;
+    wire [4:0]iNextPos;
+    wire [4:0]iNextPosAdd5;
+    wire [2:0]iAtLast;
+    wire [2:0]convertedI;
+    wire [2:0]convertedJ;
+    wire [4:0]memIdxOut;
+    wire [4:0]memInp;
 
-    wire [size-1:0]o1;
-    wire [size-1:0]o2;
-    wire [size-1:0]o3;
-    wire [size-1:0]o4;
 
-    wire temp1;
-    wire temp2;
-    wire temp3;
-
-    // wire val;
-    wire sign;
     wire newVal;
     wire regVal;
 
-    Initer #(3) Iiniter(.clk(clk), .rst(rst), .val(initValIJ),
-        .en(IJen), .outreg(i));
-    Initer #(3) Jiniter(.clk(clk), .rst(rst), .val(initValIJ),
-        .en(IJen), .outreg(j));
-    
-    IJMux #(3) IMUXconverter(.select(i),.out(iIdx));
-    IJMux #(3) JMUXconverter(.select(j),.out(jIdx));
+    IJMux newI(jReg, convertedI);
+    IJMux newJ(iReg, convertedJ);
 
-    Shifter #(5) iIdxShifter(.data({2'b00, iIdx}), .coefficient({2'b01}), .shifted(ii));
+    Shifter #(5) multiplyI4(.data({2'b00, convertedI}), .coefficient({2'b01}), .shifted(iMult4));
 
-    Adder #(5) row5Coeff(.i1({2'b00, iIdx}), .i2(ii), .a(iii));
+    Adder #(5) multiplyI5(.i1({2'b00, convertedI}), .i2(iMult4), .a(iMult5));
 
-    Adder #(5) indexAdder(.i1(iii), .i2({2'b00, jIdx}), .a(memIdx));
+    Adder #(5) indexAdder(.i1(iMult5), .i2({2'b00, convertedJ}), .a(memIdx));
+
+    Register #(5) indexMemReg(.clk(clk), .rst(rst), .ld(writeMemReg), .inputData(memIdx), 
+        .outputData(memIdxOut));
+
+    assign memInp = ~write ? memIdxOut: memIdx;
 
     MemoryBlock #(5,25) MB(.clk(clk), .rst(rst), .init(initLine), .line(line),
-        .index(memIdx), .val(regVal), .write(write), .read(read), .out(newVal));
+        .index(memInp), .val(regVal), .write(write), .read(read), .out(newVal));
 
-    Register valRegister(.clk(clk), .rst(rst), .ld(writeVal), .inputData(newVal), 
-        .inputData_(2'b00), .outputData(regVal), .outputData_(temp1));
+    Register #(1) valRegister(.clk(clk), .rst(rst), .ld(writeVal), .inputData(newVal), 
+        .outputData(regVal));
 
-    Register newJRegister(.clk(clk), .rst(rst), .ld(IJregen), .inputData(i), 
-        .inputData_(2'b00), .outputData(jReg), .outputData_(temp2));
+    Register #(3) JRegister(.clk(clk), .rst(rst), .ld(IJregen), 
+        .inputData(j), .outputData(jReg));
 
-    Shifter #(5) jIdxShifter(.data({2'b00, jReg}), .coefficient({2'b00}), .shifted(jj));
+    Shifter #(5) multiplyI2(.data({2'b00, iReg}), .coefficient({2'b00}), .shifted(iMult2));
 
-    Adder #(5) jRegAdder(.i1(jj), .i2({2'b00, jReg}), .a(jjReg));
+    Adder #(5) multiplyI3(.i1(iMult2), .i2({2'b00, iReg}), .a(iMult3));
 
-    Adder #(5) jRegDec5Adder(.i1(jjReg), .i2({5'b11011}), .a({sign3j, jjRegDec})); // decrease 5 for sign j reg part
+    Register  #(5) regTillPositive(.clk(clk), .rst(rst), .ld(ldTillPositive), 
+        .inputData(iNextPosAdd5), .outputData(iNextPos));
 
-    Mux #(5) Jfeedback(.i1(jjRegDec), .i2(ALUout), .sel(fb3j), .out(mux3j));
+    assign sign = iNextPosAdd5[4];
 
-    ALU alu(.in1(mux3j), .in2(muxi), .ALUop(ALUop), 
-        .iseq(isArith|fbeq), .res(ALUout), .sign(sign));
+    assign iNextPosAdd5 = (waitCalNexti) ? (iNextPos + 5'b00101): iNextMult2;
 
-    Register newIRegister(.clk(clk), .rst(rst), .ld(IJregen), .inputData(shiftOut), 
-        .inputData_(2'b00), .outputData(iReg), .outputData_(temp3));
+    Register #(5) registerLastIndex(.clk(clk), .rst(rst), .ld(ld_index), .inputData(memIdx), .outputData(lastIndex));
 
-    Subtractor #(5) iRegAdder(.i1(j), .i2(ALUout), .en(isArith), .out(subOut));
+    Register #(3) IRegister(.clk(clk), .rst(rst), .ld(IJregen),
+        .inputData(i), .outputData(iReg));
+    
+    assign iAtLast = (iNextPos == 5'b00000) ? 3'b000: (iNextPos == 5'b00001) ? 
+        3'b011: (iNextPos == 5'b00010) ? 3'b001: (iNextPos == 5'b00011) ? 3'b100:
+        3'b010;
 
-    Subtractor #(5) iRegDec5Adder(.i1(subOut), .i2(5'd5), .en(isArith), .out({signeq, subDec}));
+    Subtractor #(5) twiceNextI(.i1({2'b00, jReg}), .i2(iMult3), .en(isArith), .out(iNextMult2));
 
-    Mux #(5) Ifeedback(.i1(subDec), .i2(ALUout), .sel(fbeq), .out(muxi));
+    assign i = IJen ? 3'b011: update ? iAtLast : i;
+    assign j = IJen ? 3'b011: update ? iReg : j;
 
-    Multiplexer #(5) ALUMUX(.res(ALUout), .enable(enable),
-        .o1(o1), .o2(o2), .o3(o3), .o4(o4));
-
-    assign eq = o1 | o2;
-
-    Shifter #(5) rightShifter(.data(o4), .coefficient(2'b10), .shifted(shiftOut));
-
-    assign done = (shiftOut[0]&jReg[0])&(shiftOut[1]&jReg[1]); 
-
-    assign i = update ? shiftOut : i;
-    assign j = update ? jReg : j;
+    assign done = iReg[0] & iReg[1] & jReg[0] & jReg[1];
     
 endmodule

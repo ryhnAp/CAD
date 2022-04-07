@@ -14,6 +14,6 @@ module Subtractor (
 
     output [size:0]out;
 
-    assign out = (en == 1'b1) ? i1 - i2 : out;
+    assign out = i1 + ~(i2) + 1;
 
 endmodule
