@@ -21,7 +21,7 @@ module TB ();
     reg [8*11:0]inFileName = "input_0.txt";
     reg [8*12:0]outFileName = "output_0.txt";
 
-    wire sign3j, signeq, done, sign, eq;
+    wire sign3j, signeq, done, sign, eq, ok;
 
     integer test, i, outFile, testCounts=3, k;
 
@@ -54,7 +54,8 @@ module TB ();
     readLine,
     ldTillPositive,
     count
-    ,firstread);
+    ,firstread, 
+    ok);
 
     Datapath dp(
     clk,
@@ -83,7 +84,8 @@ module TB ();
     sign,
     eq, 
     mem, 
-    firstread
+    firstread,
+    ok
     );
 
 
@@ -101,12 +103,12 @@ module TB ();
             outFile = $fopen(outFileName, "w");
             for(i = 0; i < 64; i= i+1) begin  
                 line = Mem[i];
-                #9300;
+                #20000;
                 $fwriteb(outFile, mem);
                 $fdisplay(outFile, "");
                 count = count + 1;
             end  
-            #9500;
+            #9050;
             $fclose(test);
             $fclose(outFile);
         end

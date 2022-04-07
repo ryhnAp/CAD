@@ -29,7 +29,8 @@ module Controller (
     readLine,
     ldTillPositive,
     count,
-    firstread
+    firstread,
+    ok
 );
     parameter size = 5;
     parameter memsize = 25;
@@ -42,7 +43,7 @@ module Controller (
     output reg IJen, ALUop, read, write, initLine, firstread;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
     input [memsize-1:0]line;
-    output reg readLine;
+    output reg readLine, ok;
 
     parameter [3:0] 
         Start = 4'd0,
@@ -85,7 +86,7 @@ module Controller (
     assign sig = ~(count + ~count2 + 6'b000001);
     assign tmp = sig[5] & sig[4] & sig[3] & sig[2] & sig[1] & sig[0];
 
-    always @(ps, start, sign3j, signeq, done, sign, eq) begin
+    always @(ps, start, sign3j, signeq, done, sign, eq, tmp) begin
         case (ps)
             Start:      ns = start ? Idle : Start;
             Idle:       ns = Ydimension;
@@ -101,14 +102,14 @@ module Controller (
             Check:      ns = Prepared;
             Prepared:   ns = Updater;
             Updater:    ns = ~done ? Shift3 : Next;
-            Next:       ns = Ydimension;
+            Next:       ns = (~tmp) ? Next: Ydimension;
             Ready:      ns = Start;
             default: ns = Start;
         endcase
     end
 
     always @(ps) begin
-        {firstread, ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine} = 0;
+        {ok, firstread, ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount} = 0;
         case (ps)
             Start:      begin
                 //nothing
@@ -150,16 +151,20 @@ module Controller (
                 read = 1'b1;
                 fbeq = 1'b1;
                 ALUop =  1'b0;
+                ok = 1'b1;
             end
             Add:        begin
                 fbeq = 1'b1;
                 ALUop =  1'b1;
                 write = 1'b1;
+                ok = 1'b1;
             end
             Check:      begin
                 enable = 1'b1;
+                ok = 1'b1;
             end
             Prepared:   begin
+                ok = 1'b1;
             end
             Store:      begin // fix algo
             end
@@ -168,6 +173,7 @@ module Controller (
             end
             Next:       begin
                 enCount = 1'b1;
+                ok = 1'b1;
             end
             Ready:     begin
                 //nothing
