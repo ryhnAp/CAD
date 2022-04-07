@@ -27,13 +27,16 @@ module Controller (
     enable,
     update,
     readLine,
-    ldTillPositive
+    ldTillPositive,
+    count
 );
     parameter size = 5;
     parameter memsize = 25;
     
     input clk, rst;
     input start, sign3j, signeq, done, sign, eq;
+    reg [5:0] count2;
+    input [5:0]count;
 
     output reg IJen, ALUop, read, write, initLine;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
@@ -62,23 +65,32 @@ module Controller (
     reg [5:0]loadInit = 0; // n times count = 5
     wire coutCount;
 
+
     reg [3:0] ps, ns;
 
     Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
 
     always @(posedge clk, posedge rst) begin
-        if(rst)
+        if(rst)begin
             ps <= Start;
+            count2 <= 6'b000000;
+        end
         else
             ps <= ns;
     end
+
+    wire [5:0] sig;
+    wire tmp;
+    assign sig = ~(count + ~count2 + 6'b000001);
+    assign tmp = sig[5] & sig[4] & sig[3] & sig[2] & sig[1] & sig[0];
 
     always @(ps, start, sign3j, signeq, done, sign, eq) begin
         case (ps)
             Start:      ns = start ? Idle : Start;
             Idle:       ns = Ydimension;
             Ydimension: ns = coutCount ? Ready : Line;
-            Line:       ns = Shift3;
+            Line:       ns = Store;
+            Store:      ns = Shift3;
             Shift3:     ns = Sub3j;
             Sub3j:      ns = ~sign ? Add3j : Sub3j;
             Add3j:      ns = Arithmetic;
@@ -86,9 +98,8 @@ module Controller (
             Sub:        ns = Add;
             Add:        ns = Check;
             Check:      ns = Prepared;
-            Prepared:   ns = Store;
-            Store:      ns = Updater;
-            Updater:    ns = done ? Next : Shift3;
+            Prepared:   ns = Updater;
+            Updater:    ns = ~done ? Shift3 : Next;
             Next:       ns = Ydimension;
             Ready:      ns = Start;
             default: ns = Start;
@@ -110,10 +121,13 @@ module Controller (
             end
             Line:       begin
                 IJen = 1'b1;
-                read = 1'b1;
                 initLine = 1'b1;
-                writeVal = 1'b1;
                 IJregen = 1'b1;
+                count2 = count2 + 1;
+            end
+            Store:     begin
+                writeVal = 1'b1;
+                read = 1'b1;
             end
             Shift3:     begin
                 writeMemReg = 1'b1;
@@ -133,15 +147,13 @@ module Controller (
             end
             Sub:        begin
                 read = 1'b1;
-                writeVal = 1'b1;
-                write = 1'b1;
                 fbeq = 1'b1;
                 ALUop =  1'b0;
             end
             Add:        begin
                 fbeq = 1'b1;
                 ALUop =  1'b1;
-                
+                write = 1'b1;
             end
             Check:      begin
                 enable = 1'b1;

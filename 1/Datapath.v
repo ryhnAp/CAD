@@ -23,7 +23,8 @@ module Datapath (
     signeq,
     done,
     sign,
-    eq
+    eq, 
+    mem,
 );
     parameter size = 5;
     parameter memsize = 25;
@@ -34,6 +35,7 @@ module Datapath (
     input IJen, ALUop, read, write, initLine, writeMemReg;
     input writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, ldTillPositive;
     input [memsize-1:0]line;
+    output [24:0]mem;
 
     output sign3j, signeq, done, sign, eq;
 
@@ -72,10 +74,10 @@ module Datapath (
     Register #(5) indexMemReg(.clk(clk), .rst(rst), .ld(writeMemReg), .inputData(memIdx), 
         .outputData(memIdxOut));
 
-    assign memInp = ~write ? memIdxOut: memIdx;
+    assign memInp = write ? memIdxOut: memIdx;
 
     MemoryBlock #(5,25) MB(.clk(clk), .rst(rst), .init(initLine), .line(line),
-        .index(memInp), .val(regVal), .write(write), .read(read), .out(newVal));
+        .index(memInp), .val(regVal), .write(write), .read(read), .out(newVal), .mem(mem));
 
     Register #(1) valRegister(.clk(clk), .rst(rst), .ld(writeVal), .inputData(newVal), 
         .outputData(regVal));

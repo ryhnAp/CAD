@@ -35,3 +35,2305 @@ run -all
 # ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
 #    Time: 192130 ns  Iteration: 0  Instance: /TB
 # Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/MB/mem
+run -all
+# Break key hit
+# Simulation stop requested.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/clk
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/done
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/memIdx
+add wave -position insertpoint  \
+sim:/TB/dp/memIdxOut
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/regVal
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Break key hit
+# Simulation stop requested.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/newVal
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/MB/index
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v failed with 1 errors.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v failed with 1 errors.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/MB/ind_new
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+add wave -position insertpoint  \
+sim:/TB/dp/MB/out
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 68
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 80
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 83
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 88
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 97
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 106
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(91)
+#    Time: 192130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 91
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v failed with 4 errors.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v failed with 1 errors.
+# 14 compiles, 2 failed with 5 errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v failed with 2 errors.
+# 14 compiles, 1 failed with 2 errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+add wave -position insertpoint  \
+sim:/TB/c/count2
+add wave -position insertpoint  \
+sim:/TB/c/count
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+add wave -position insertpoint  \
+sim:/TB/dp/line
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+add wave -position insertpoint  \
+sim:/TB/c/ps
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+add wave -position insertpoint  \
+sim:/TB/c/sig
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+add wave -position insertpoint  \
+sim:/TB/c/tmp
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+run -all
+# Break key hit
+# Simulation stop requested.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+add wave -position insertpoint  \
+sim:/TB/c/ns
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 640130 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(99)
+#    Time: 585030 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 99
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v failed with 1 errors.
+# 14 compiles, 1 failed with 1 error.
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Error: (vsim-3043) Unresolved reference to 'test2'.
+#    Time: 0 ns  Iteration: 0  Instance: /TB File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+# Break key hit
+# Break key hit
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 10:41:18 on Apr 07,2022
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Error: (vsim-3043) Unresolved reference to 'test2'.
+#    Time: 0 ns  Iteration: 0  Instance: /TB File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+# Error loading design
+# End time: 16:38:12 on Apr 07,2022, Elapsed time: 5:56:54
+# Errors: 2, Warnings: 21
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.TB
+# vsim -gui work.TB 
+# Start time: 16:39:19 on Apr 07,2022
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(102)
+#    Time: 591430 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 102
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(103)
+#    Time: 591430 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 103
+# Compile of Adder.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Controller.v was successful.
+# Compile of Counter.v was successful.
+# Compile of Datapath.v was successful.
+# Compile of IJMux.v was successful.
+# Compile of Initer.v was successful.
+# Compile of MemoryBlock.v was successful.
+# Compile of Multiplexer.v was successful.
+# Compile of Mux.v was successful.
+# Compile of Register.v was successful.
+# Compile of Shifter.v was successful.
+# Compile of Subtractor.v was successful.
+# Compile of TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.TB
+# Loading work.Controller
+# Loading work.Counter
+# Loading work.Datapath
+# Loading work.IJMux
+# Loading work.Shifter
+# Loading work.Adder
+# Loading work.Register
+# Loading work.MemoryBlock
+# Loading work.Subtractor
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI5 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 70
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexAdder File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 72
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'indexMemReg'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/indexMemReg File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 74
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'valRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/valRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 82
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'JRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/JRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 85
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'a'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/multiplyI3 File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 90
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'regTillPositive'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/regTillPositive File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 92
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'registerLastIndex'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/registerLastIndex File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 99
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'IRegister'.  Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/IRegister File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 101
+# ** Warning: (vsim-3015) [PCDPC] - Port size (6) does not match connection size (5) for port 'out'. The port definition is at: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Subtractor.v(6).
+#    Time: 0 ns  Iteration: 0  Instance: /TB/dp/twiceNextI File: C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v Line: 108
+run -all
+# ** Note: $stop    : C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v(103)
+#    Time: 591430 ns  Iteration: 0  Instance: /TB
+# Break in Module TB at C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v line 103
