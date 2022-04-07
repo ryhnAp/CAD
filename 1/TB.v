@@ -5,7 +5,6 @@ module TB ();
     
     reg [24:0] Mem [0:63];
 
-    initial $readmemb("input_0.txt",Mem);
 
     reg clk=1'b0, rst=1'b1, newLine = 1'b1;
     wire IJen, ALUop, read, write, initLine, waitCalNexti;
@@ -95,12 +94,14 @@ module TB ();
         for (k = 0; k < testCounts ; k = k+1) begin
             $sformat(inFileName, "input_%0d.txt", k);
             $sformat(outFileName, "output_%0d.txt", k);
+            $readmemb(inFileName,Mem);
             // inFileName[6] = k + "0";
             // outFileName[7] = k + "0";
             #30 rst = 1'b0;
             start = 1'b1;
             test = $fopen(inFileName, "r");
             outFile = $fopen(outFileName, "w");
+            count = 6'b000000;
             for(i = 0; i < 64; i= i+1) begin  
                 line = Mem[i];
                 #20000;
@@ -108,7 +109,6 @@ module TB ();
                 $fdisplay(outFile, "");
                 count = count + 1;
             end  
-            #9050;
             $fclose(test);
             $fclose(outFile);
         end

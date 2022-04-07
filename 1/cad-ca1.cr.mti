@@ -5,19 +5,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Initer
 
+} {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Controller.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
 } {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Shifter.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Shifter.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Shifter
 
 Top level modules:
 	Shifter
-
-} {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/TB.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB
-
-Top level modules:
-	TB
 
 } {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Datapath.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

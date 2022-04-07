@@ -26,6 +26,6 @@ module Counter (
 
     end
 
-    assign co = en ? &PO : 1'b0;
+    assign co = &PO;
 
 endmodule

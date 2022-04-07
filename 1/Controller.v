@@ -99,9 +99,9 @@ module Controller (
             Arithmetic: ns = Sub;
             Sub:        ns = Add;
             Add:        ns = Check;
-            Check:      ns = Prepared;
-            Prepared:   ns = Updater;
-            Updater:    ns = ~done ? Shift3 : Next;
+            Check:      ns = Updater;
+            Prepared:   ns = Next;
+            Updater:    ns = ~done ? Shift3 : Prepared;
             Next:       ns = (~tmp) ? Next: Ydimension;
             Ready:      ns = Start;
             default: ns = Start;
@@ -165,6 +165,7 @@ module Controller (
             end
             Prepared:   begin
                 ok = 1'b1;
+                enCount = 1'b1;
             end
             Store:      begin // fix algo
             end
@@ -172,7 +173,6 @@ module Controller (
                 
             end
             Next:       begin
-                enCount = 1'b1;
                 ok = 1'b1;
             end
             Ready:     begin
