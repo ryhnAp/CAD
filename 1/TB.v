@@ -18,9 +18,12 @@ module TB ();
 
     reg [5:0]count = 6'b000000;
 
+    reg [8*11:0]inFileName = "input_0.txt";
+    reg [8*12:0]outFileName = "output_0.txt";
+
     wire sign3j, signeq, done, sign, eq;
 
-    integer test, i, outFile;
+    integer test, i, outFile, testCounts=3, k;
 
     Controller c(
     clk,
@@ -85,21 +88,27 @@ module TB ();
     always #20 clk = ~clk;
 
     initial begin
-
-        #30 rst = 1'b0;
-        start = 1'b1;
-        test = $fopen("input_0.txt", "r");
-        outFile = $fopen("output_0.txt", "w");
-        for(i = 0; i < 64; i= i+1) begin  
-            line = Mem[i];
-            #9100;
-            $fwriteb(outFile, mem);
-            $fdisplay(outFile, "");
-            count = count + 1;
-        end  
+        for (k = 0; k < testCounts ; k = k+1) begin
+            $sformat(inFileName, "input_%0d.txt", k);
+            $sformat(outFileName, "output_%0d.txt", k);
+            inFileName[6] = k + "0";
+            outFileName[7] = k + "0";
+            #30 rst = 1'b0;
+            start = 1'b1;
+            test = $fopen(inFileName, "r");
+            outFile = $fopen(outFileName, "w");
+            for(i = 0; i < 64; i= i+1) begin  
+                line = Mem[i];
+                #9100;
+                $fwriteb(outFile, mem);
+                $fdisplay(outFile, "");
+                count = count + 1;
+            end  
+            #9000;
+            $fclose(test);
+            $fclose(outFile);
+        end
         #9000;
-        $fclose(test);
-        $fclose(outFile);
         $stop;
     end
 
