@@ -5,6 +5,8 @@ module TB ();
     
     reg [24:0] Mem [0:63];
 
+    reg [63:0] laneMem [24:0];
+
 
     reg clk=1'b0, rst=1'b1, newLine = 1'b1;
     wire IJen, ALUop, read, write, initLine, waitCalNexti;
@@ -22,7 +24,7 @@ module TB ();
 
     wire sign3j, signeq, done, sign, eq, ok;
 
-    integer test, i, outFile, testCounts=3, k;
+    integer test, i, outFile, testCounts=3, k, m, n;
 
     Controller c(
     clk,
@@ -102,6 +104,11 @@ module TB ();
             test = $fopen(inFileName, "r");
             outFile = $fopen(outFileName, "w");
             count = 6'b000000;
+            for (m = 0; m < 25 ; m = m+1) begin
+                for (n = 0; n < 64 ; n = n+1) begin
+                    laneMem[m][n] = Mem[n][m];
+                end 
+            end
             for(i = 0; i < 64; i= i+1) begin  
                 line = Mem[i];
                 #20000;

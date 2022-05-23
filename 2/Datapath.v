@@ -47,6 +47,15 @@ module Datapath (
     output [memsize-1:0]newSlice;
     // col parity
 
+    // rotate
+    input [4:0] sliceIdx; // index in slice which represent what lane we are 
+    input initRotate;
+    input [63:0] lane;
+
+    output finishLane;
+    output [63:0] newLane; // setting new values
+    // rotate
+
     // permutation
     input clk, rst, firstread;
     input IJen, ALUop, read, write, initLine, writeMemReg;
@@ -56,6 +65,20 @@ module Datapath (
     output [24:0]mem;
     output sign3j, signeq, done, sign, eq;
     // permutation
+
+    // revaluate
+    input initReval;
+    input [24:0] slice;
+
+    output [24:0] newSlice;
+    // revaluate
+
+    // add RC
+    input [63:0] A00; // A[0,0]
+    input initARC;
+
+    output [63:0] A00out;
+    // add RC
 
     // col parity ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     wire [2:0] cpI; // col parity i coordinate 
@@ -98,6 +121,24 @@ module Datapath (
 
     // end of col parity ~~~~~~~~~~~~~~~~~~~~~~~
 
+    // rotate ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    reg [23:0] tTable [5:0] = {6'd1, 6'd3, 6'd6, 6'd10, 6'd15, 6'd21, 6'd28, 6'd36, 6'd45, 6'd55, 6'd2, 6'd14, 6'd27, 6'd41, 6'd56, 6'd8, 6'd25, 6'd43, 6'd62, 6'd18, 6'd39, 6'd61, 6'd20, 6'd44};
+    wire [6:0] zCounter; // z dimention counter
+    wire [6:0] zCounterInput; // z dimention counter
+    wire [6:0] zCal; // z dimention calculation
+    wire [6:0] zMod; // z - tTable is negative or more than 63 then remode
+
+
+    assign zCounterInput = initRotate ? 7'd0 : zCounter + 7'd1;
+    Register #(7) ZCounterInReg(.clk(clk), .rst(rst), .ld(initRotate), .inputData(zCounterInput), 
+        .outputData(zCounter));
+
+    assign zCal = zCounter - tTable[sliceIdx]; 
+    assign zMod = zCal ? zCal + 7'd64 : zCal;
+    assign newLane[zCounter] = (sliceIdx == 5'd0) ? lane[zCounter] : lane[zMod];
+    assign finishLane = zCounter == 7'd64;
+
+    // end of rotate ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     // permutation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     wire [2:0]i;
@@ -175,5 +216,57 @@ module Datapath (
     
     // end of permutation ~~~~~~~~~~~~~~~~~~~~~~
 
+
+    // revaluate ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    wire [2:0] xR; // x for reval func
+    wire [2:0] yR; // y for reval func
+    wire [2:0] xp2; // x+2 value for reval func
+    wire [2:0] xp1; // x+1 value for reval func
+    wire [2:0] xR_input; // x for reval func
+    wire [2:0] yR_input; // y for reval func
+    
+
+    assign xR_input = initReval ? 3'd0 : (xR == 3'd4 ? 3'd0  : xR + 1);
+    assign yR_input = initReval ? 3'd0 : (xR == 3'd4 ? yR+3'd1  : yR);
+
+    Register #(3) XRegister(.clk(clk), .rst(rst), .ld(initReval),
+        .inputData(xR_input), .outputData(xR));
+    Register #(3) YRegister(.clk(clk), .rst(rst), .ld(initReval),
+        .inputData(yR_input), .outputData(yR));
+
+    assign xp2 = xR == 3'd3 ? 3'd0 : (xR == 3'd4 ? 3'd0 : xR + 3'd2); 
+    assign xp1 = xR == 3'd4 ? 3'd0 : xR + 3'd1; 
+
+    assign newSlice[5*xR + yR] = slice[5*xR + yR] ^ ((~slice[5*xp1 + yR]) & slice[5*xp2 + yR]) 
+
+    // end of revaluate ~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // addRC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    wire [4:0] roundIdx;
+    wire [4:0] roundIdx_input;
+
+    assign roundIdx_input = initARC ? 5'd0 : roundIdx + 5'd1 ;
+
+    Register #(5) ARCRegister(.clk(clk), .rst(rst), .ld(initARC),
+        .inputData(roundIdx_input), .outputData(roundIdx));
+
+    reg [23:0] round [63:0] = {
+            16'x0000000000000001, 16'x000000008000808B,
+            16'x0000000000008082, 16'x800000000000008B,
+            16'x800000000000808A, 16'x8000000000008089,
+            16'x8000000080008000, 16'x8000000000008003,
+            16'x000000000000808B, 16'x8000000000008002,
+            16'x0000000080000001, 16'x8000000000000080,
+            16'x8000000080008081, 16'x000000000000800A,
+            16'x8000000000008009, 16'x800000008000000A,
+            16'x000000000000008A, 16'x8000000080008081,
+            16'x0000000000000088, 16'x8000000000008080,
+            16'x0000000080008009, 16'x0000000080000001,
+            16'x000000008000000A, 16'x8000000080008008};
+
+    assign A00out = A00 ^ round[roundIdx];
+    
+
+    // end of addRC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 endmodule
