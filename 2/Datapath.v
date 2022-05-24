@@ -8,6 +8,14 @@ module Datapath (
     lineKcp,
     linePKcp,
     newSlice,
+    colparDone,
+
+    //rotate 
+    sliceIdx,
+    initRotate,
+    lane,
+    finishLane,
+    newLane,
 
     //permutation
     IJen,
@@ -33,7 +41,18 @@ module Datapath (
     eq, 
     mem,
     firstread,
-    ok
+    ok,
+
+    //reval
+    initReval,
+    slice,
+    newSlice,
+
+    //addRC
+    A00,
+    initARC,
+    A00out
+
 );
     parameter size = 5;
     parameter memsize = 25;
@@ -45,6 +64,7 @@ module Datapath (
     input [memsize-1:0] linePKcp; // line k-1 is previous slice of A[i,j,k] in col parity
 
     output [memsize-1:0]newSlice;
+    output colparDone;
     // col parity
 
     // rotate
@@ -83,6 +103,8 @@ module Datapath (
     // col parity ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     wire [2:0] cpI; // col parity i coordinate 
     wire [2:0] cpJ; // col parity j coordinate 
+    wire [2:0] cpI_input; // col parity i coordinate 
+    wire [2:0] cpJ_input; // col parity j coordinate 
     wire [4:0] cpJmult4; // col parity 4*j coordinate for line 
     wire [4:0] cpJmult5; // col parity 5*j coordinate for line 
     wire [4:0] cpIdx; // col parity A array(which is A[i,j,k] and current slice) index in line 
@@ -92,7 +114,8 @@ module Datapath (
     wire [2:0] increasedJ; // count 5 column then increase j to calculate next row
     wire prevSlice, currSlice;
 
-
+    assign cpI_input = colparIJrster ? 3'd0 : cpInew;
+    assign cpJ_input = colparIJrster ? 3'd0 : cpJnew;
     Initer #(3) colparIiniter(.clk(clk), .rst(rst), .val(3'd0), .en(colparIJrster), .outreg(cpI));
     Initer #(3) colparJiniter(.clk(clk), .rst(rst), .val(3'd0), .en(colparIJrster), .outreg(cpJ));
     Initer #(3) colparJcounter(.clk(clk), .rst(rst), .val(3'd2), .en(colparIJrster), .outreg(Jincreaser)); // from 2 -> 7 co is one then we count five time
@@ -114,10 +137,12 @@ module Datapath (
     
     assign cpJnew = &increasedJ ? ((cpJ == 3'b100) ? 3'd0 : cpJ + 1'b1) : cpJ;
 
-    Register #(3) colparNewIReg(.clk(clk), .rst(rst), .ld(1'b1), .inputData(cpInew), 
-        .outputData(cpI));
-    Register #(3) colparNewJReg(.clk(clk), .rst(rst), .ld(1'b1), .inputData(cpJnew), 
-        .outputData(cpJ));
+    // Register #(3) colparNewIReg(.clk(clk), .rst(rst), .ld(1'b1), .inputData(cpInew), 
+    //     .outputData(cpI));
+    // Register #(3) colparNewJReg(.clk(clk), .rst(rst), .ld(1'b1), .inputData(cpJnew), 
+    //     .outputData(cpJ));
+
+    assign colparDone = (cpIdx == 5'd64);
 
     // end of col parity ~~~~~~~~~~~~~~~~~~~~~~~
 

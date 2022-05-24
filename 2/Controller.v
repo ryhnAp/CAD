@@ -36,39 +36,55 @@ module Controller (
     parameter memsize = 25;
     
     input clk, rst;
+
+    // col parity
+    input reg colparDone;
+    output reg colparIJrster;
+
+    // col parity
+
+
+    //permutation
     input start, sign3j, signeq, done, sign, eq;
-    reg [5:0] count2;
     input [5:0]count;
+    input [memsize-1:0]line;
 
     output reg IJen, ALUop, read, write, initLine, firstread;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
-    input [memsize-1:0]line;
     output reg readLine, ok;
+    reg [5:0] count2;
+    //permutation
 
-    parameter [3:0] 
-        Start = 4'd0,
-        Idle = 4'd1,
-        Ydimension = 4'd2,
-        Line = 4'd3,
-        Shift3 = 4'd4,
-        Sub3j = 4'd5,
-        Add3j = 4'd6,
-        Arithmetic = 4'd7,
-        Sub = 4'd8,
-        Add = 4'd9,
-        Check = 4'd10,
-        Prepared = 4'd11,
-        Store = 4'd12,
-        Updater = 4'd13,
-        Next = 4'd14,
-        Ready = 4'd15;
+    parameter [4:0] 
+        Start = 5'd0,
+        //col par
+        ColBegin = 5'd16,
+        ColCal = 5'd17,
+        ColDone = 5'd17,
+
+        //permut
+        Idle = 5'd1,
+        Ydimension = 5'd2,
+        Line = 5'd3,
+        Shift3 = 5'd4,
+        Sub3j = 5'd5,
+        Add3j = 5'd6,
+        Arithmetic = 5'd7,
+        Sub = 5'd8,
+        Add = 5'd9,
+        Check = 5'd10,
+        Prepared = 5'd11,
+        Store = 5'd12,
+        Updater = 5'd13,
+        Next = 5'd14,
+        Ready = 5'd15;
 
     reg enCount=0, loadCount=0, first = 0;
     reg [5:0]loadInit = 0; // n times count = 5
     wire coutCount;
 
 
-    reg [3:0] ps, ns;
+    reg [4:0] ps, ns;
 
     Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
 
@@ -88,7 +104,12 @@ module Controller (
 
     always @(ps, start, sign3j, signeq, done, sign, eq, tmp) begin
         case (ps)
-            Start:      ns = start ? Idle : Start;
+            Start:      ns = start ? ColBegin : Start;
+            //col par
+            ColBegin:   ns = ColCal;
+            ColCal:     ns = ColDone;
+            ColDone:    ns = ;
+            //permut
             Idle:       ns = Ydimension;
             Ydimension: ns = coutCount ? Ready : Line;
             Line:       ns = Store;
@@ -114,6 +135,9 @@ module Controller (
             Start:      begin
                 //nothing
             end
+            //permut
+            
+            
             Idle:       begin
                 loadCount = 1'd1;
             end

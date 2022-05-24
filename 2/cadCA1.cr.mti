@@ -68,13 +68,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Initer
 
-} {} {}} F:/semester6/CAD/hw/1/code/Controller.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/1/code/Controller.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Controller
-
-Top level modules:
-	Controller
-
 } {} {}} F:/semester6/CAD/hw/1/code/Shifter.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/1/code/Shifter.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Shifter

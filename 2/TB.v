@@ -3,6 +3,24 @@
 
 module TB ();
     
+    //col parity
+    wire colparIJrster;
+    wire [memsize-1:0] lineKcp;
+    wire [memsize-1:0] linePKcp;
+
+    wire [memsize-1:0]newSlice;
+    //col parity
+
+    //rotate
+    wire [4:0] sliceIdx; // index in slice which represent what lane we are 
+    wire initRotate;
+    wire [63:0] lane;
+
+    wire finishLane;
+    wire [63:0] newLane; // setting new values
+    //rotate
+
+    //permutation
     reg [24:0] Mem [0:63];
 
     reg [63:0] laneMem [24:0];
@@ -25,12 +43,28 @@ module TB ();
     wire sign3j, signeq, done, sign, eq, ok;
 
     integer test, i, outFile, testCounts=3, k, m, n;
+    //permutation
+
+    // revaluate
+    wire initReval;
+    wire [24:0] slice;
+
+    wire [24:0] newSlice;
+    // revaluate
+
+    // add RC
+    wire [63:0] A00; // A[0,0]
+    wire initARC;
+
+    wire [63:0] A00out;
+    // add RC
 
     Controller c(
     clk,
     rst,
     start,
 
+    //permutation
     sign3j,
     signeq,
     done,
@@ -54,13 +88,32 @@ module TB ();
     update,
     readLine,
     ldTillPositive,
-    count
-    ,firstread, 
-    ok);
+    count,
+    firstread, 
+    ok,
+    //permutation
+
+    
+    );
 
     Datapath dp(
     clk,
     rst,
+
+    //colpar
+    colparIJrster,
+    lineKcp,
+    linePKcp,
+    newSlice,
+
+    //rotate 
+    sliceIdx,
+    initRotate,
+    lane,
+    finishLane,
+    newLane,
+
+    //permutation
     IJen,
     ALUop,
     read,
@@ -76,18 +129,26 @@ module TB ();
     waitCalNexti,
     writeMemReg,
     ldTillPositive,
-    update,
-
-
+    update,//enable for updating i,j after being checked and update "i"  
     sign3j,
     signeq,
     done,
     sign,
     eq, 
-    mem, 
+    mem,
     firstread,
-    ok
-    );
+    ok,
+
+    //reval
+    initReval,
+    slice,
+    newSlice,
+
+    //addRC
+    A00,
+    initARC,
+    A00out
+);
 
 
     always #20 clk = ~clk;
