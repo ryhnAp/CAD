@@ -46,12 +46,14 @@ module Datapath (
     //reval
     initReval,
     slice,
-    newSlice,
+    revalNewSlice,
+    revalDone,
 
     //addRC
     A00,
     initARC,
-    A00out
+    A00out,
+    addRCDone
 
 );
     parameter size = 5;
@@ -63,7 +65,7 @@ module Datapath (
     input [memsize-1:0] lineKcp; // line k is current slice of A[i,j,k] in col parity
     input [memsize-1:0] linePKcp; // line k-1 is previous slice of A[i,j,k] in col parity
 
-    output [memsize-1:0]newSlice;
+    output [memsize-1:0] newSlice;
     output colparDone;
     // col parity
 
@@ -90,7 +92,8 @@ module Datapath (
     input initReval;
     input [24:0] slice;
 
-    output [24:0] newSlice;
+    output [24:0] revalNewSlice;
+    output revalDone;
     // revaluate
 
     // add RC
@@ -98,6 +101,7 @@ module Datapath (
     input initARC;
 
     output [63:0] A00out;
+    output addRCDone;
     // add RC
 
     // col parity ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,9 +131,12 @@ module Datapath (
     assign currSlice = (cpI == 3'd0) ? 1'b0 : lineKcp[5'd20+cpI-1'd1] ^ lineKcp[5'd15+cpI-1'd1] ^ lineKcp[5'd10+cpI-1'd1] ^ lineKcp[5'd5+cpI-1'd1] ^ lineKcp[cpI-1'd1];
     assign prevSlice = (cpI == 3'b100) ? 1'b0 : linePKcp[5'd20+cpI+1'd1] ^ linePKcp[5'd15+cpI+1'd1] ^ linePKcp[5'd10+cpI+1'd1] ^ linePKcp[5'd5+cpI+1'd1] ^ linePKcp[cpI+1'd1];
 
-    assign newSlice[cpIdx] = lineKcp[cpIdx] ^ currSlice ^ prevSlice;
+    // assign newSlice[cpIdx] = lineKcp[cpIdx] ^ ( currSlice) ^ ( prevSlice);
 
-    Adder #(3) colparIndexAdder(.i1(Jincreaser), .i2(1'b1), .a(increasedJ));
+    Register #(1) CPnewSliceUpdater(.clk(clk), .rst(rst), .ld(1'd1), .inputData(lineKcp[cpIdx] ^ ( currSlice) ^ ( prevSlice)), 
+        .outputData(newSlice[cpIdx]));
+
+    Adder #(3) colparJIndexAdder(.i1(Jincreaser), .i2(1'b1), .a(increasedJ));
 
     assign cpInew = (cpI == 3'd0) ? 3'd1: (cpI == 3'd1) ? 3'd2: 
         (cpI == 3'd2) ? 3'd3: (cpI == 3'd3) ? 3'd4:
@@ -142,17 +149,17 @@ module Datapath (
     // Register #(3) colparNewJReg(.clk(clk), .rst(rst), .ld(1'b1), .inputData(cpJnew), 
     //     .outputData(cpJ));
 
-    assign colparDone = (cpIdx == 5'd64);
+    assign colparDone = &cpIdx;
 
     // end of col parity ~~~~~~~~~~~~~~~~~~~~~~~
 
     // rotate ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    reg [23:0] tTable [5:0] = {6'd1, 6'd3, 6'd6, 6'd10, 6'd15, 6'd21, 6'd28, 6'd36, 6'd45, 6'd55, 6'd2, 6'd14, 6'd27, 6'd41, 6'd56, 6'd8, 6'd25, 6'd43, 6'd62, 6'd18, 6'd39, 6'd61, 6'd20, 6'd44};
+    reg [23:0] tTable [5:0];
     wire [6:0] zCounter; // z dimention counter
     wire [6:0] zCounterInput; // z dimention counter
     wire [6:0] zCal; // z dimention calculation
     wire [6:0] zMod; // z - tTable is negative or more than 63 then remode
-
+    wire laneInput;
 
     assign zCounterInput = initRotate ? 7'd0 : zCounter + 7'd1;
     Register #(7) ZCounterInReg(.clk(clk), .rst(rst), .ld(initRotate), .inputData(zCounterInput), 
@@ -160,7 +167,12 @@ module Datapath (
 
     assign zCal = zCounter - tTable[sliceIdx]; 
     assign zMod = zCal ? zCal + 7'd64 : zCal;
-    assign newLane[zCounter] = (sliceIdx == 5'd0) ? lane[zCounter] : lane[zMod];
+
+    assign laneInput = (sliceIdx == 5'd0) ? lane[zCounter] : lane[zMod];
+    // assign newLane[zCounter] = (sliceIdx == 5'd0) ? lane[zCounter] : lane[zMod];
+    Register #(1) rotateLaneUpdater(.clk(clk), .rst(rst), .ld(1'd1), .inputData(laneInput), 
+        .outputData(newLane[zCounter]));
+
     assign finishLane = zCounter == 7'd64;
 
     // end of rotate ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -249,6 +261,7 @@ module Datapath (
     wire [2:0] xp1; // x+1 value for reval func
     wire [2:0] xR_input; // x for reval func
     wire [2:0] yR_input; // y for reval func
+    wire revalNewInput;
     
 
     assign xR_input = initReval ? 3'd0 : (xR == 3'd4 ? 3'd0  : xR + 1);
@@ -262,36 +275,84 @@ module Datapath (
     assign xp2 = xR == 3'd3 ? 3'd0 : (xR == 3'd4 ? 3'd0 : xR + 3'd2); 
     assign xp1 = xR == 3'd4 ? 3'd0 : xR + 3'd1; 
 
-    assign newSlice[5*xR + yR] = slice[5*xR + yR] ^ ((~slice[5*xp1 + yR]) & slice[5*xp2 + yR]) 
+    assign revalNewInput = slice[5*xR + yR] ^ ((~slice[5*xp1 + yR]) & slice[5*xp2 + yR]) ;
+    // assign revalNewSlice[5*xR + yR] = slice[5*xR + yR] ^ ((~slice[5*xp1 + yR]) & slice[5*xp2 + yR]) ;
+
+    Register #(1) revalIdxUpdater(.clk(clk), .rst(rst), .ld(1'd1),
+        .inputData(revalNewInput), .outputData(revalNewSlice[5*xR + yR]));
+
+    assign revalDone = (xR == 3'd4)&(yR == 3'd4);
 
     // end of revaluate ~~~~~~~~~~~~~~~~~~~~~~~~
 
     // addRC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     wire [4:0] roundIdx;
     wire [4:0] roundIdx_input;
+    reg [23:0] round [63:0] ;
 
     assign roundIdx_input = initARC ? 5'd0 : roundIdx + 5'd1 ;
 
     Register #(5) ARCRegister(.clk(clk), .rst(rst), .ld(initARC),
         .inputData(roundIdx_input), .outputData(roundIdx));
 
-    reg [23:0] round [63:0] = {
-            16'x0000000000000001, 16'x000000008000808B,
-            16'x0000000000008082, 16'x800000000000008B,
-            16'x800000000000808A, 16'x8000000000008089,
-            16'x8000000080008000, 16'x8000000000008003,
-            16'x000000000000808B, 16'x8000000000008002,
-            16'x0000000080000001, 16'x8000000000000080,
-            16'x8000000080008081, 16'x000000000000800A,
-            16'x8000000000008009, 16'x800000008000000A,
-            16'x000000000000008A, 16'x8000000080008081,
-            16'x0000000000000088, 16'x8000000000008080,
-            16'x0000000080008009, 16'x0000000080000001,
-            16'x000000008000000A, 16'x8000000080008008};
 
     assign A00out = A00 ^ round[roundIdx];
-    
+    assign addRCDone = (roundIdx == 4'd24);
 
     // end of addRC ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    initial begin
+        tTable[0] = 6'd1;
+        tTable[1] = 6'd3;
+        tTable[2] = 6'd6;
+        tTable[3] = 6'd10;
+        tTable[4] = 6'd15;
+        tTable[5] = 6'd21;
+        tTable[6] = 6'd28;
+        tTable[7] = 6'd36;
+        tTable[8] = 6'd45;
+        tTable[9] = 6'd55;
+        tTable[10] = 6'd2;
+        tTable[11] = 6'd14;
+        tTable[12] = 6'd27;
+        tTable[13] = 6'd41;
+        tTable[14] = 6'd56;
+        tTable[15] = 6'd8;
+        tTable[16] = 6'd25;
+        tTable[17] = 6'd43;
+        tTable[18] = 6'd62;
+        tTable[19] = 6'd18;
+        tTable[20] = 6'd39;
+        tTable[21] = 6'd61;
+        tTable[22] = 6'd20;
+        tTable[23] = 6'd44;
+        
+        round[0] = 16'h0000000000000001;
+        round[1] = 16'h000000008000808B;
+        round[2] = 16'h0000000000008082;
+        round[3] = 16'h800000000000008B;
+        round[4] = 16'h800000000000808A;
+        round[5] = 16'h8000000000008089;
+        round[6] = 16'h8000000080008000;
+        round[7] = 16'h8000000000008003;
+        round[8] = 16'h000000000000808B;
+        round[9] = 16'h8000000000008002;
+        round[10] = 16'h0000000080000001;
+        round[11] = 16'h8000000000000080;
+        round[12] = 16'h8000000080008081;
+        round[13] = 16'h000000000000800A;
+        round[14] = 16'h8000000000008009;
+        round[15] = 16'h800000008000000A;
+        round[16] = 16'h000000000000008A;
+        round[17] = 16'h8000000080008081;
+        round[18] = 16'h0000000000000088;
+        round[19] = 16'h8000000000008080;
+        round[20] = 16'h0000000080008009;
+        round[21] = 16'h0000000080000001;
+        round[22] = 16'h000000008000000A;
+        round[23] = 16'h8000000080008008;
+        
+    end
+
 
 endmodule

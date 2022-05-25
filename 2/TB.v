@@ -5,16 +5,18 @@ module TB ();
     
     //col parity
     wire colparIJrster;
-    wire [memsize-1:0] lineKcp;
-    wire [memsize-1:0] linePKcp;
+    reg [24:0] lineKcp;
+    reg [24:0] linePKcp;
+    wire [5:0] KCP; // k dimension in cp
 
-    wire [memsize-1:0]newSlice;
+    wire [24:0]newSlice;
+    wire colparDone;
     //col parity
 
     //rotate
     wire [4:0] sliceIdx; // index in slice which represent what lane we are 
     wire initRotate;
-    wire [63:0] lane;
+    reg [63:0] lane;
 
     wire finishLane;
     wire [63:0] newLane; // setting new values
@@ -23,7 +25,7 @@ module TB ();
     //permutation
     reg [24:0] Mem [0:63];
 
-    reg [63:0] laneMem [24:0];
+    reg [63:0] laneMem [0:24];
 
 
     reg clk=1'b0, rst=1'b1, newLine = 1'b1;
@@ -47,29 +49,40 @@ module TB ();
 
     // revaluate
     wire initReval;
-    wire [24:0] slice;
+    reg [24:0] slice;
+    wire [5:0] revalDim;// revaluate dimension
 
-    wire [24:0] newSlice;
+    wire [24:0] revalNewSlice;
+    wire revalDone;
     // revaluate
 
     // add RC
-    wire [63:0] A00; // A[0,0]
+    reg [63:0] A00; // A[0,0]
     wire initARC;
 
     wire [63:0] A00out;
+    wire addRCDone;
     // add RC
 
     Controller c(
     clk,
     rst,
     start,
-
-    //permutation
+    // col parity 
+    colparDone,
+    colparIJrster,
+    KCP,
+    // rotate
+    sliceIdx,
+    initRotate,
+    finishLane,
+    // permut
     sign3j,
     signeq,
     done,
     sign,
     eq,
+    
     waitCalNexti,
     writeMemReg,
 
@@ -89,11 +102,15 @@ module TB ();
     readLine,
     ldTillPositive,
     count,
-    firstread, 
+    firstread,
     ok,
-    //permutation
-
-    
+    // reval
+    initReval,
+    revalDim,
+    revalDone,
+    // add rc
+    addRCDone,
+    initARC
     );
 
     Datapath dp(
@@ -105,6 +122,7 @@ module TB ();
     lineKcp,
     linePKcp,
     newSlice,
+    colparDone,
 
     //rotate 
     sliceIdx,
@@ -142,13 +160,16 @@ module TB ();
     //reval
     initReval,
     slice,
-    newSlice,
+    revalNewSlice,
+    revalDone,
 
     //addRC
     A00,
     initARC,
-    A00out
-);
+    A00out,
+    addRCDone
+
+    );
 
 
     always #20 clk = ~clk;
@@ -170,13 +191,63 @@ module TB ();
                     laneMem[m][n] = Mem[n][m];
                 end 
             end
+            // start
+            if (KCP == 6'd0) begin
+                linePKcp = 64'd0;
+            end
+            else begin
+                linePKcp = Mem[KCP-6'd1];
+            end
+            lineKcp = Mem[KCP]; 
+            if (KCP == 6'd64) begin
+                
+            end
+            else begin
+                if (colparDone) begin
+                    Mem[KCP] = newSlice;
+                end
+            end
+            lane = laneMem[sliceIdx];
+            if (finishLane) begin
+                laneMem[sliceIdx] = newLane;
+            end
+
+            if (sliceIdx == 5'd24) begin
+                for (m = 0; m < 25 ; m = m+1) begin
+                    for (n = 0; n < 64 ; n = n+1) begin
+                        Mem[n][m] = laneMem[m][n];
+                    end 
+                end 
+            end
+
             for(i = 0; i < 64; i= i+1) begin  
                 line = Mem[i];
                 #20000;
-                $fwriteb(outFile, mem);
-                $fdisplay(outFile, "");
+                Mem[i] = mem;
+                // $fwriteb(outFile, mem);
+                // $fdisplay(outFile, "");
                 count = count + 1;
             end  
+            slice = Mem[revalDim];
+            if (revalDone) begin
+                Mem[revalDim] = revalNewSlice;
+            end
+
+            for (n = 0; n < 64 ; n = n+1) begin
+                A00[n] = Mem[n][0];
+            end
+            
+            if (addRCDone) begin
+                for (n = 0; n < 64 ; n = n+1) begin
+                    Mem[n][0] = A00out[n];
+                end 
+            end
+
+            for(i = 0; i < 64; i= i+1) begin  
+                $fwriteb(outFile, Mem[i]);
+                $fdisplay(outFile, "");
+            end  
+
             $fclose(test);
             $fclose(outFile);
         end

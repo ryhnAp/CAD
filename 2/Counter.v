@@ -5,7 +5,8 @@ module Counter (
     en,
     ld,
     initld,
-    co
+    co, 
+    out
 );
     parameter n = 6;
     
@@ -13,6 +14,7 @@ module Counter (
     input [n-1:0] initld;
     
     output co;
+    output out;
 
     reg [n-1:0]PO;
     
@@ -27,5 +29,6 @@ module Counter (
     end
 
     assign co = &PO;
+    assign out = PO;
 
 endmodule
