@@ -56,8 +56,11 @@ void res_file(string name, vector<vector<int>> &data)
     ofstream res(name);
     fors(i, 0, 64)
     {
-        fors(j, 0, 25)
+        for (int j = 24; j >= 0; j--)
+        {
             res << data[i][j];
+        }
+        
         res << endl;
     }
     res.close();
@@ -76,8 +79,8 @@ int main(int argc, char* argv[])
 
     while (getline(entry,tempString,'\n'))
     {
-        for (int i = 0; i < 25; i++)
-            data[j][i] = (tempString[i] - '0');
+        for (int i = 24; i >= 0; i--)
+            data[j][24-i] = (tempString[i] - '0');
         j++;
     }
     entry.close();
