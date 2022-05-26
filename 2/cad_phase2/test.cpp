@@ -93,8 +93,8 @@ int main(int argc, char* argv[])
             {
                 int index = 5*k+(j%5 +1);
                 int index_ = 5*k+(j%5 -1);
-                curr ^= (j%5 == 4) ? 0 : data[i][index];
-                prev ^= ((j%5 == 0)|(i == 0)) ? 0 : data[i-1][index_];
+                curr ^= ((j%5 == 0)) ? 0 : data[i][index];
+                prev ^= ((j%5 == 4)|(i == 0)) ? 0 : data[i-1][index_];
             }
             new_slice[i][j] = data[i][j] ^ curr ^ prev;
         }
