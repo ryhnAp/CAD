@@ -83,9 +83,9 @@ int main(int argc, char* argv[])
     entry.close();
     
     //col par
+    vector<vector<int>> new_slice(64, vector<int>(25));
     fors(i, 0, 64)
     {
-        vector<int> new_slice(25);
         fors(j, 0, 25)
         {
             bool prev=0, curr=0;
@@ -96,10 +96,10 @@ int main(int argc, char* argv[])
                 curr ^= (j%5 == 4) ? 0 : data[i][index];
                 prev ^= ((j%5 == 0)|(i == 0)) ? 0 : data[i-1][index_];
             }
-            new_slice[j] = data[i][j] ^ curr ^ prev;
+            new_slice[i][j] = data[i][j] ^ curr ^ prev;
         }
-        data[i] = new_slice;
     }
+    data = new_slice;
     res_file(name.substr(0,name.size()-3)+"-colpar.out", data);
 
     //rotate
