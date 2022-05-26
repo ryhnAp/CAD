@@ -6,7 +6,8 @@ module Controller (
     // col parity 
     colparDone,
     colparIJrster,
-    KCP,
+    KCP, 
+    ld_ij_par, 
     // rotate
     sliceIdx,
     initRotate,
@@ -45,16 +46,21 @@ module Controller (
     revalDone,
     // add rc
     addRCDone,
-    initARC
+    initARC,
+    next_par,
+    ld_prev,
+    next_lane,
+    en_rotate
 );
     parameter size = 5;
     parameter memsize = 25;
     
-    input clk, rst;
+    input clk, rst, next_lane;
+    output reg ld_ij_par;
 
     // col parity
-    input colparDone;
-    output reg colparIJrster;
+    input colparDone, next_par;
+    output reg colparIJrster, en_rotate;
     output [5:0] KCP;
 
     // col parity
@@ -79,7 +85,7 @@ module Controller (
     //permutation
 
     // revaluate
-    output reg initReval;
+    output reg initReval, ld_prev;
 
     output [5:0] revalDim;// revaluate dimension
     output reg revalDone;
@@ -95,7 +101,7 @@ module Controller (
         Start = 6'd0,
         //col par
         ColBegin = 6'd16,
-        ColCal = 6'd17,
+        ColCal = 6'd40,
         ColDone = 6'd17,
         ColDim = 6'd18, // col parity add 1 to counter cuz next col
         ColNext = 6'd19, // col parity check to go to the next dimension
@@ -147,21 +153,21 @@ module Controller (
 
     reg CPenCount=0, CPloadCount=0; // col parity 64 z dimension counter
     wire CPcoutCount; // col parity count is done ?
-    wire [5:0]CPstep;
+    wire [6:0]CPstep;
 
 
     reg RenCount=0, RloadCount=0; // rotate 64 z dimension counter
     wire RcoutCount; // rotate count is done ?
-    wire [5:0]Rstep;
+    wire [4:0]Rstep;
 
     reg revalEnCount=0, revalLoadCount=0; // reval 64 z dimension counter
     wire revalCoutCount; // reval count is done ?
     wire [5:0]RVstep;
 
-    reg [4:0] ps, ns;
+    reg [5:0] ps, ns;
 
     Counter #(6) cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount), .out(step));
-    Counter #(6) ccCP(.clk(clk), .rst(rst), .en(CPenCount), .ld(CPloadCount), .initld(loadInit), .co(CPcoutCount), .out(CPstep)); // col parity
+    Counter #(7) ccCP(.clk(clk), .rst(rst), .en(CPenCount), .ld(CPloadCount), .initld(7'd62), .co(CPcoutCount), .out(CPstep)); // col parity
     Counter #(5) ccR(.clk(clk), .rst(rst), .en(RenCount), .ld(RloadCount), .initld(5'd8), .co(RcoutCount), .out(Rstep)); // rotate
     Counter #(6) ccReval(.clk(clk), .rst(rst), .en(revalEnCount), .ld(revalLoadCount), .initld(loadCount), .co(revalCoutCount), .out(RVstep)); // rotate
 
@@ -183,7 +189,7 @@ module Controller (
     assign sig = ~(count + ~count2 + 6'b000001);
     assign tmp = sig[5] & sig[4] & sig[3] & sig[2] & sig[1] & sig[0];
 
-    always @(ps, start, sign3j, signeq, done, sign, eq, tmp, colparDone, CPcoutCount, finishLane, RcoutCount, revalDone, revalCoutCount, addRCDone) begin
+    always @(ps, start, sign3j, signeq, done, sign, eq, tmp, colparDone, CPcoutCount, finishLane, RcoutCount, revalDone, revalCoutCount, addRCDone, ld_ij_par, next_par, next_lane) begin
         case (ps)
             Start:      ns = start ? ColBegin : Start;
             //col par
@@ -191,12 +197,12 @@ module Controller (
             ColCal:     ns = ColDone;
             ColDone:    ns = colparDone ? ColDim : ColDone;
             ColDim:     ns = ColNext;
-            ColNext:    ns = CPcoutCount ? RBegin : ColBegin;
+            ColNext:    ns = CPcoutCount ? RBegin : next_par? ColBegin: ColNext;
             //rotate
             RBegin:     ns = RCal;
             RCal:       ns = RDone;
             RDone:      ns = finishLane ? RDim : RDone;
-            RDim:       ns = RNext;
+            RDim:       ns = RcoutCount ? Idle: next_lane? RNext: RDim;
             RNext:      ns = RcoutCount ? Idle : RBegin;
             
             //permut
@@ -235,23 +241,28 @@ module Controller (
     always @(ps) begin
         {ok, firstread, ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, 
             initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount, 
-            colparIJrster, CPenCount, CPloadCount, initRotate, initReval, initARC } = 0;
+            colparIJrster, CPenCount, CPloadCount, initRotate, initReval, initARC , ld_ij_par, ld_prev,
+            en_rotate, RloadCount} = 0;
         case (ps)
             Start:      begin
                 //nothing
+                CPloadCount = 1'b1;
             end
             //col par
             ColBegin: begin
                 colparIJrster = 1'd1;
+                ld_ij_par = 1'b1;
             end
             ColCal: begin
+                ld_ij_par = 1'b1;
 
             end
             ColDone: begin
-
+                ld_ij_par = 1'b1;
             end
             ColDim: begin
                 CPenCount = 1'd1;
+                ld_prev = 1'b1;
             end
             ColNext: begin
 
@@ -259,12 +270,13 @@ module Controller (
             //rotate
             RBegin: begin
                 initRotate = 1'd1;
+                RloadCount = 1'b1;
             end
             RCal: begin
 
             end
             RDone: begin
-
+                en_rotate = 1'b1;
             end
             RDim: begin
                 RenCount = 1'd1;

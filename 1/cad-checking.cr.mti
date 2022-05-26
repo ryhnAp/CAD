@@ -68,19 +68,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	MemoryBlock
 
-} {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Register.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Register.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Register
-
-Top level modules:
-	Register
-
 } {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/IJMux.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/IJMux.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module IJMux
 
 Top level modules:
 	IJMux
+
+} {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Register.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Register.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register
+
+Top level modules:
+	Register
 
 } {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/1/Adder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

@@ -14,7 +14,7 @@ module Counter (
     input [n-1:0] initld;
     
     output co;
-    output out;
+    output [n-1:0] out;
 
     reg [n-1:0]PO;
     

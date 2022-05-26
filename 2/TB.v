@@ -6,11 +6,9 @@ module TB ();
     //col parity
     wire colparIJrster;
     reg [24:0] lineKcp;
-    reg [24:0] linePKcp;
-    wire [5:0] KCP; // k dimension in cp
 
     wire [24:0]newSlice;
-    wire colparDone;
+    wire colparDone, ld_ij_par;
     //col parity
 
     //rotate
@@ -19,23 +17,26 @@ module TB ();
     reg [63:0] lane;
 
     wire finishLane;
+    reg next_lane;
     wire [63:0] newLane; // setting new values
     //rotate
 
     //permutation
     reg [24:0] Mem [0:63];
+    reg [24:0] Mem2[0:63];
+
 
     reg [63:0] laneMem [0:24];
 
-
+    reg [4:0]laneid;
     reg clk=1'b0, rst=1'b1, newLine = 1'b1;
     wire IJen, ALUop, read, write, initLine, waitCalNexti;
     wire writeVal, IJregen, fbeq, fb3j, isArith, enable, update, writeMemReg, ldTillPositive;
     wire [4:0]val;
     reg [24:0]line;
     wire [24:0]mem;
-    wire readLine, firstread;
-    reg start = 1'b0;
+    wire readLine, firstread, ld_prev;
+    reg start = 1'b0, next_par = 1'b0;
 
     reg [5:0]count = 6'b000000;
 
@@ -44,7 +45,7 @@ module TB ();
 
     wire sign3j, signeq, done, sign, eq, ok;
 
-    integer test, i, outFile, testCounts=3, k, m, n;
+    integer test, i, outFile, testCounts=3, k, m, n, j;
     //permutation
 
     // revaluate
@@ -61,7 +62,7 @@ module TB ();
     wire initARC;
 
     wire [63:0] A00out;
-    wire addRCDone;
+    wire addRCDone, en_rotate;
     // add RC
 
     Controller c(
@@ -72,6 +73,7 @@ module TB ();
     colparDone,
     colparIJrster,
     KCP,
+    ld_ij_par,
     // rotate
     sliceIdx,
     initRotate,
@@ -110,7 +112,11 @@ module TB ();
     revalDone,
     // add rc
     addRCDone,
-    initARC
+    initARC,
+    next_par,
+    ld_prev,
+    next_lane,
+    en_rotate
     );
 
     Datapath dp(
@@ -120,55 +126,43 @@ module TB ();
     //colpar
     colparIJrster,
     lineKcp,
-    linePKcp,
     newSlice,
     colparDone,
-
-    //rotate 
-    sliceIdx,
-    initRotate,
+    ld_ij_par,
+    ld_prev,
+    //rotate
     lane,
-    finishLane,
     newLane,
+    finishLane,
+    laneid,
+    initRotate,
+    en_rotate,
 
     //permutation
-    IJen,
-    ALUop,
-    read,
-    write,
-    initLine,
-    line,
-    writeVal,
-    IJregen,
-    fb3j,
-    fbeq,
-    isArith,
-    enable,
-    waitCalNexti,
+    firstread, 
+    IJen, 
+    ALUop, 
+    read, 
+    write, 
+    initLine, 
     writeMemReg,
-    ldTillPositive,
-    update,//enable for updating i,j after being checked and update "i"  
-    sign3j,
-    signeq,
-    done,
-    sign,
-    eq, 
+    writeVal, 
+    IJregen, 
+    fbeq, 
+    fb3j, 
+    isArith, 
+    enable, 
+    update, 
+    waitCalNexti, 
+    ldTillPositive, 
+    ok, 
+    line,
     mem,
-    firstread,
-    ok,
-
-    //reval
-    initReval,
-    slice,
-    revalNewSlice,
-    revalDone,
-
-    //addRC
-    A00,
-    initARC,
-    A00out,
-    addRCDone
-
+    sign3j,
+    signeq, 
+    done, 
+    sign, 
+    eq
     );
 
 
@@ -176,37 +170,62 @@ module TB ();
 
     initial begin
         for (k = 0; k < testCounts ; k = k+1) begin
+
             $sformat(inFileName, "input_%0d.txt", k);
             $sformat(outFileName, "output_%0d.txt", k);
             $readmemb(inFileName,Mem);
-            // inFileName[6] = k + "0";
-            // outFileName[7] = k + "0";
+
             #30 rst = 1'b0;
             start = 1'b1;
+
             test = $fopen(inFileName, "r");
             outFile = $fopen(outFileName, "w");
-            count = 6'b000000;
+
+            for(i = 0; i < 64; i= i+1) begin 
+                lineKcp = Mem[i];
+                #60 
+                    next_par = 1'b0;
+                #1500;
+                Mem[i] = newSlice;
+                next_par = 1'b1;
+            end  
+
+        //rotate
+
+            for(i = 0; i < 25; i= i+1) begin 
+                lane = 64'd0;
+                laneid = i;
+                for(j = 0; j < 64; j = j + 1) begin
+                    lane[j] = Mem[j][i]; 
+                end
+                #60 
+                    next_lane = 1'b0;
+                #80000;
+                laneMem[i] = newLane;
+                next_lane = 1'b1;
+            end
+
             for (m = 0; m < 25 ; m = m+1) begin
                 for (n = 0; n < 64 ; n = n+1) begin
-                    laneMem[m][n] = Mem[n][m];
+                    Mem[n][m] = laneMem[m][n];
                 end 
-            end
-            // start
-            if (KCP == 6'd0) begin
-                linePKcp = 64'd0;
-            end
-            else begin
-                linePKcp = Mem[KCP-6'd1];
-            end
-            lineKcp = Mem[KCP]; 
-            if (KCP == 6'd64) begin
-                
-            end
-            else begin
-                if (colparDone) begin
-                    Mem[KCP] = newSlice;
-                end
-            end
+            end 
+
+            count = 6'd0;
+            rst = 1'b1;
+            #80 rst = 1'b0;
+
+            for(i = 0; i < 64; i= i+1) begin  
+                line = Mem[i];
+                #20000;
+                Mem2[i] = mem;
+                count = count + 1;
+            end 
+
+             for(i = 0; i < 64; i= i+1) begin  
+                Mem[i] = Mem2[i];
+            end 
+            /*
             lane = laneMem[sliceIdx];
             if (finishLane) begin
                 laneMem[sliceIdx] = newLane;
@@ -224,8 +243,6 @@ module TB ();
                 line = Mem[i];
                 #20000;
                 Mem[i] = mem;
-                // $fwriteb(outFile, mem);
-                // $fdisplay(outFile, "");
                 count = count + 1;
             end  
             slice = Mem[revalDim];
@@ -243,6 +260,7 @@ module TB ();
                 end 
             end
 
+            */
             for(i = 0; i < 64; i= i+1) begin  
                 $fwriteb(outFile, Mem[i]);
                 $fdisplay(outFile, "");
@@ -251,7 +269,7 @@ module TB ();
             $fclose(test);
             $fclose(outFile);
         end
-        #9000;
+        #9000
         $stop;
     end
 

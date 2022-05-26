@@ -1,11 +1,12 @@
 `timescale 1ns/1ns
-module Register (
+module  my_register(
     clk,
     rst,
     ld,
     inputData,
     outputData,
 );
+
     parameter size = 3;
 
     input clk, rst;
