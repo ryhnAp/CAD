@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
         vector<int> new_slice(25);
         fors(j, 0, 25)
         {
-            int prev=0, curr=0;
+            bool prev=0, curr=0;
             fors(k, 0, 5)
             {
                 curr += (j%5 == 4) ? 0 : data[i][k*(j%5 +1)];
@@ -100,7 +100,6 @@ int main(int argc, char* argv[])
     res_file(name.substr(0,name.size()-3)+"-colpar.out", data);
     //rotate
     int table[] = {0,1,3,6,10,15,21,28,36,45,55,2,14,27,41,56,8,25,43,62,18,39,61,20,44};
-    debug("here");
     fors(i, 1, 25)
     {
         vector<int> new_lane(64);
@@ -129,8 +128,8 @@ int main(int argc, char* argv[])
         vector<int> new_slice(25);
         fors(j, 0, 25)
         {
-            int noti = (j%5 == 4) ? 0 : ~(data[i][(j/5)+(j%5+1)]);
-            int andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j/5)+(j%5+2)]);
+            bool noti = (j%5 == 4) ? 0 : ~(data[i][(j/5)+(j%5+1)]);
+            bool andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j/5)+(j%5+2)]);
             new_slice[j] = data[i][j]^(noti&andi);
         }
         data[i] = new_slice;
