@@ -67,6 +67,7 @@ void res_file(string name, vector<vector<int>> &data)
 int main(int argc, char* argv[])
 {
     string name = argv[1];
+    // string name = "0.in";
     vector<vector<int>> data(64, vector<int>(25));
     ifstream entry;
     string tempString;
@@ -90,8 +91,10 @@ int main(int argc, char* argv[])
             bool prev=0, curr=0;
             fors(k, 0, 5)
             {
-                curr += (j%5 == 4) ? 0 : data[i][k*(j%5 +1)];
-                prev += ((j%5 == 0)|(i == 0)) ? 0 : data[i-1][k*(j%5 -1)];
+                int index = 5*k+(j%5 +1);
+                int index_ = 5*k+(j%5 -1);
+                curr ^= (j%5 == 4) ? 0 : data[i][index];
+                prev ^= ((j%5 == 0)|(i == 0)) ? 0 : data[i-1][index_];
             }
             new_slice[j] = data[i][j] ^ curr ^ prev;
         }
