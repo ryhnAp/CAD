@@ -105,8 +105,10 @@ int main(int argc, char* argv[])
 
     //rotate
     int table[] = {21,8,41,45,15,56,14,18,2,61,28,27,0,1,62,55,20,36,44,6,25,39,3,10,43};
-    fors(i, 1, 25)
+    fors(i, 0, 25)
     {
+        if(i==12)
+            continue;
         vector<int> new_lane(64);
         fors(j, 0, 64)
             new_lane[j] = data[(unsigned(j-table[i]))%64][i];
@@ -133,8 +135,8 @@ int main(int argc, char* argv[])
         vector<int> new_slice(25);
         fors(j, 0, 25)
         {
-            bool noti = (j%5 == 4) ? 0 : ~(data[i][(j/5)+(j%5+1)]);
-            bool andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j/5)+(j%5+2)]);
+            bool noti = (j%5 == 4) ? 0 : ~(data[i][(j*5)+(j%5+1)]);
+            bool andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j*5)+(j%5+2)]);
             new_slice[j] = data[i][j]^(noti&andi);
         }
         data[i] = new_slice;
