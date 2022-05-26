@@ -51,6 +51,19 @@ const int LOG=20;
 // int  seg  [4*MAXN];
 // int  lazy [4*MAXN];
 
+void res_file(string name, vector<vector<int>> &data)
+{
+    ofstream res(name);
+    fors(i, 0, 64)
+    {
+        fors(j, 0, 24)
+            res << data[i][j];
+        res << endl;
+    }
+    res.close();
+
+}
+
 int main(int argc, char* argv[])
 {
     string name = argv[1];
@@ -68,34 +81,35 @@ int main(int argc, char* argv[])
     }
     entry.close();
     
-    // //col par
-    // fors(i, 0, 64)
-    // {
-    //     vector<int> new_slice(25);
-    //     fors(j, 0, 25)
-    //     {
-    //         int prev=0, curr=0;
-    //         fors(k, 0, 5)
-    //         {
-    //             curr += (j%5 == 4) ? 0 : data[i][k*(j%5 +1)];
-    //             prev += ((j%5 == 0) | (j/5 == 0)) ? 0 : data[i-1][k*(j%5 -1)];
-    //         }
-    //         new_slice[j] = data[i][j] ^ curr ^ prev;
-    //     }
-    //     data[i] = new_slice;
-    // }
+    //col par
+    fors(i, 0, 64)
+    {
+        vector<int> new_slice(25);
+        fors(j, 0, 25)
+        {
+            int prev=0, curr=0;
+            fors(k, 0, 5)
+            {
+                curr += (j%5 == 4) ? 0 : data[i][k*(j%5 +1)];
+                prev += ((j%5 == 0)|(i == 0)) ? 0 : data[i-1][k*(j%5 -1)];
+            }
+            new_slice[j] = data[i][j] ^ curr ^ prev;
+        }
+        data[i] = new_slice;
+    }
+    res_file(name.substr(0,name.size()-3)+"-colpar.out", data);
+    //rotate
+    int table[] = {1,3,6,10,15,21,28,36,45,55,2,14,27,41,56,8,25,43,62,18,39,61,20,44};
 
-    // //rotate
-    // int table[] = {1,3,6,10,15,21,28,36,45,55,2,14,27,41,56,8,25,43,62,18,39,61,20,44};
-
-    // fors(i, 1, 25)
-    // {
-    //     vector<int> new_lane(64);
-    //     fors(j, 0, 64)
-    //         new_lane[j] = data[(j-table[i])%64][i];
-    //     fors(j, 0, 64)
-    //         data[j][i] = new_lane[j];
-    // }
+    fors(i, 1, 25)
+    {
+        vector<int> new_lane(64);
+        fors(j, 0, 64)
+            new_lane[j] = data[(j-table[i])%64][i];
+        fors(j, 0, 64)
+            data[j][i] = new_lane[j];
+    }
+    res_file(name.substr(0,name.size()-3)+"-rotate.out", data);
 
     //permutation
     int permut[] = {4,5,11,17,23,2,8,14,15,21,0,6,12,18,24,3,9,10,16,22,1,7,13,19,20};
@@ -107,64 +121,68 @@ int main(int argc, char* argv[])
         
         data[i] = new_slice;
     }
+    res_file(name.substr(0,name.size()-3)+"-permut.out", data);
 
-    // //revaluate
-    // fors(i, 0, 64)
-    // {
-    //     vector<int> new_slice(25);
-    //     fors(j, 0, 25)
-    //     {
-    //         int noti = (j%5 == 4) ? 0 : ~(data[i][(j/5)+(j%5+1)]);
-    //         int andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j/5)+(j%5+2)]);
-    //         new_slice[j] = data[i][j]^(noti&andi);
-    //     }
-    //     data[i] = new_slice;
-    // }
+    //revaluate
+    fors(i, 0, 64)
+    {
+        vector<int> new_slice(25);
+        fors(j, 0, 25)
+        {
+            int noti = (j%5 == 4) ? 0 : ~(data[i][(j/5)+(j%5+1)]);
+            int andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j/5)+(j%5+2)]);
+            new_slice[j] = data[i][j]^(noti&andi);
+        }
+        data[i] = new_slice;
+    }
+    res_file(name.substr(0,name.size()-3)+"-reval.out", data);
 
-    // //addRC
-    // string round[24];
-    // round[0] = "0000000000000001";
-    // round[1] = "000000008000808B";
-    // round[2] = "0000000000008082";
-    // round[3] = "800000000000008B";
-    // round[4] = "800000000000808A";
-    // round[5] = "8000000000008089";
-    // round[6] = "8000000080008000";
-    // round[7] = "8000000000008003";
-    // round[8] = "000000000000808B";
-    // round[9] = "8000000000008002";
-    // round[10] = "0000000080000001";
-    // round[11] = "8000000000000080";
-    // round[12] = "8000000080008081";
-    // round[13] = "000000000000800A";
-    // round[14] = "8000000000008009";
-    // round[15] = "800000008000000A";
-    // round[16] = "000000000000008A";
-    // round[17] = "8000000080008081";
-    // round[18] = "0000000000000088";
-    // round[19] = "8000000000008080";
-    // round[20] = "0000000080008009";
-    // round[21] = "0000000080000001";
-    // round[22] = "000000008000000A";
-    // round[23] = "8000000080008008";
+    //addRC
+    string round[24];
+    round[0] = "0000000000000001";
+    round[1] = "000000008000808B";
+    round[2] = "0000000000008082";
+    round[3] = "800000000000008B";
+    round[4] = "800000000000808A";
+    round[5] = "8000000000008089";
+    round[6] = "8000000080008000";
+    round[7] = "8000000000008003";
+    round[8] = "000000000000808B";
+    round[9] = "8000000000008002";
+    round[10] = "0000000080000001";
+    round[11] = "8000000000000080";
+    round[12] = "8000000080008081";
+    round[13] = "000000000000800A";
+    round[14] = "8000000000008009";
+    round[15] = "800000008000000A";
+    round[16] = "000000000000008A";
+    round[17] = "8000000080008081";
+    round[18] = "0000000000000088";
+    round[19] = "8000000000008080";
+    round[20] = "0000000080008009";
+    round[21] = "0000000080000001";
+    round[22] = "000000008000000A";
+    round[23] = "8000000080008008";
 
-    // fors(j, 0, 24)
-    // {
-    //     unsigned long long val;
-    //     istringstream ost(round[j]);
-    //     ost >> hex >> val;
-    //     bitset<64>  biti(val);
-    //     fors(i, 0, 64)
-    //         data[i][0] ^= biti[i];
-    // }
+    fors(j, 0, 24)
+    {
+        unsigned long long val;
+        istringstream ost(round[j]);
+        ost >> hex >> val;
+        bitset<64>  biti(val);
+        fors(i, 0, 64)
+            data[i][0] ^= biti[i];
+    }
+    res_file(name.substr(0,name.size()-3)+"-addRC.out", data);
 
-    ofstream res(name.substr(0,name.size()-3)+"-c.out");
+    ofstream res(name.substr(0,name.size()-3)+"-final.out");
     fors(i, 0, 64)
     {
         fors(j, 0, 24)
             res << data[i][j];
         res << endl;
     }
+    res.close();
 
     return 0;
 
