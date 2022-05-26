@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
     res_file(name.substr(0,name.size()-3)+"-colpar.out", data);
 
     //rotate
-    int table[] = {0,1,62,28,27,36,44,6,55,20,3,10,43,25,39,41,45,15,21,8,18,2,61,56,14};
+    int table[] = {21,8,41,45,15,56,14,18,2,61,28,27,0,1,62,55,20,36,44,6,25,39,3,10,43};
     fors(i, 1, 25)
     {
         vector<int> new_lane(64);
