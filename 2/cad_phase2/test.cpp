@@ -56,7 +56,7 @@ void res_file(string name, vector<vector<int>> &data)
     ofstream res(name);
     fors(i, 0, 64)
     {
-        fors(j, 0, 24)
+        fors(j, 0, 25)
             res << data[i][j];
         res << endl;
     }
@@ -66,8 +66,8 @@ void res_file(string name, vector<vector<int>> &data)
 
 int main(int argc, char* argv[])
 {
-    string name = argv[1];
-    // string name = "0.in";
+    // string name = argv[1];
+    string name = "0.in";
     vector<vector<int>> data(64, vector<int>(25));
     ifstream entry;
     string tempString;
