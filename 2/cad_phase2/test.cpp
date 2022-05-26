@@ -91,8 +91,8 @@ int main(int argc, char* argv[])
             bool prev=0, curr=0;
             fors(k, 0, 5)
             {
-                int index = 5*k+(j%5 +1);
-                int index_ = 5*k+(j%5 -1);
+                int index = 5*k+(j%5 -1);
+                int index_ = 5*k+(j%5 +1);
                 curr ^= ((j%5 == 0)) ? 0 : data[i][index];
                 prev ^= ((j%5 == 4)|(i == 0)) ? 0 : data[i-1][index_];
             }
