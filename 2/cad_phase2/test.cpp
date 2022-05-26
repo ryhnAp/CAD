@@ -135,8 +135,8 @@ int main(int argc, char* argv[])
         vector<int> new_slice(25);
         fors(j, 0, 25)
         {
-            bool noti = (j%5 == 4) ? 0 : ~(data[i][(j*5)+(j%5+1)]);
-            bool andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : ~(data[i][(j*5)+(j%5+2)]);
+            bool noti = (j%5 == 4) ? 0 : (data[i][(j+1)] ? 0 : 1 );
+            bool andi = ((j%5 == 4)|(j%5 == 3)) ? 0 : (data[i][(j+2)]);
             new_slice[j] = data[i][j]^(noti&andi);
         }
         data[i] = new_slice;
@@ -177,7 +177,7 @@ int main(int argc, char* argv[])
         ost >> hex >> val;
         bitset<64>  biti(val);
         fors(i, 0, 64)
-            data[i][0] ^= biti[i];
+            data[i][12] ^= biti[i];
     }
     res_file(name.substr(0,name.size()-3)+"-addRC.out", data);
 
