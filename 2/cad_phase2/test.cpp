@@ -57,9 +57,7 @@ void res_file(string name, vector<vector<int>> &data)
     fors(i, 0, 64)
     {
         for (int j = 24; j >= 0; j--)
-        {
             res << data[i][j];
-        }
         
         res << endl;
     }
@@ -106,7 +104,7 @@ int main(int argc, char* argv[])
     res_file(name.substr(0,name.size()-3)+"-colpar.out", data);
 
     //rotate
-    int table[] = {0,1,3,6,10,15,21,28,36,45,55,2,14,27,41,56,8,25,43,62,18,39,61,20,44};
+    int table[] = {0,1,62,28,27,36,44,6,55,20,3,10,43,25,39,41,45,15,21,8,18,2,61,56,14};
     fors(i, 1, 25)
     {
         vector<int> new_lane(64);
