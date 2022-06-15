@@ -8,23 +8,22 @@ module C2Adder (
     
     input [size-1:0]i1;
     input [size-1:0]i2;
-    output [size-1:0]o;
+    output [size:0]o;
     
-    wire [size:0]sum;
+    wire [size-1:0]sum;
     wire [size:0]carry;
     
-    assign sum[0] = 1'b0;
     assign carry[0] = 1'b0;
     
     genvar k;
     generate
-        for(k=0;k<8;k=k+2)
+        for(k=0;k<5;k=k+1)
                 begin
-                C2 #(2) oneBitAdder(.D00({i1[k],carry[k]}),.D01({i1[k],carry[k]}),.D10(2'b01),.D11(2'b10),.A1(i1[k]),.B1(i2[k]),.A0(carry[k]),.B0(carry[k]),.out({carry[k+1],sum[k]}));
+                C2 #(2) oneBitAdder(.D0({i1[k],carry[k]}),.D1({i1[k],carry[k]}),.D2(2'b01),.D3(2'b10),.A1(i1[k]),.B1(i2[k]),.A0(carry[k]),.B0(carry[k]),.out({carry[k+1],sum[k]}));
                 end
     endgenerate
     
-    assign o = sum;
+    assign o = {carry[size], sum};
 
 endmodule
 
