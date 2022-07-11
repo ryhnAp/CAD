@@ -124,13 +124,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	IJMux
 
-} {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module C2
-
-Top level modules:
-	C2
-
 } {} {}} C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Adder.v {1 {vlog -work work -stats=none C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Adder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Adder

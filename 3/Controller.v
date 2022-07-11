@@ -64,13 +64,18 @@ module Controller (
         Ready = 4'd15;
 
     reg enCount=0, loadCount=0, first = 0;
-    reg [5:0]loadInit = 0; // n times count = 5
+    reg [5:0]loadInit = 0;
+    wire [5:0]prevCounter, currCounter;
     wire coutCount;
 
 
     reg [3:0] ps, ns;
 
-    Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
+    S2 #(6) update_counter_s2(.D0(prevCounter),.D1(currCounter),.D2(loadInit),.D3(loadInit),.A1(loadCount),.B1(loadCount),.A0(enCount),.B0(enCount),.CLR(rst),.clk(clk),.out(prevCounter));
+
+    C2Adder #(6) increase_counter_c2(.i1(prevCounter), .i2(6'd1), .o({coutCount, currCounter}));
+
+    // Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
 
     always @(posedge clk, posedge rst) begin
         if(rst)begin

@@ -17,7 +17,7 @@ module C2Adder (
     
     genvar k;
     generate
-        for(k=0;k<5;k=k+1)
+        for(k=0;k<size;k=k+1)
                 begin
                     C2 #(2) oneBitAdder(.D0({i1[k],carry[k]}),.D1({i1[k],carry[k]}),.D2(2'b01),.D3(2'b10),.A1(i1[k]^i2[k]),.B1(1'b0),.A0(carry[k]),.B0(carry[k]),.out({carry[k+1],sum[k]}));
                 end
