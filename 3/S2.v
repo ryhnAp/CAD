@@ -27,7 +27,7 @@ module S2 (
 
     C2 #(size) C2_MUT(D0,D1,D2,D3,A1,B1,A0,B0,C2out);
 
-    always @(posedge clk, posedge CLR, C2out) begin
+    always @(posedge clk, posedge CLR) begin
         if(CLR) begin
             out = {size{1'b0}};
         end

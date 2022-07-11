@@ -70,8 +70,8 @@ module FDatapath ( // fpga implement of datapath
     wire regVal;
     wire regValSaved;
 
-    C2 #(3) newI(.D0({1'b0, 1'b1, jReg[0]}),.D1({3'b0}),.D2({3'b100}),.D3({2'b00, jReg[2]}),.A1(jReg[2]),.B1(jReg[1]),.A0(jReg[0]),.B0(jReg[2]),.out(convertedI));
-    C2 #(3) newJ(.D0({1'b0, 1'b1, iReg[0]}),.D1({3'b0}),.D2({3'b100}),.D3({2'b00, iReg[2]}),.A1(iReg[2]),.B1(iReg[1]),.A0(iReg[0]),.B0(iReg[2]),.out(convertedJ));
+    C2 #(3) newI(.D0({1'b0, 1'b1, jReg[0]}),.D1({3'b0}),.D2({~jReg[0], 1'b0, 1'b0}),.D3({3'b001}),.A1(jReg[2]),.B1(jReg[1]),.A0(~jReg[0]),.B0(jReg[2]),.out(convertedI));
+    C2 #(3) newJ(.D0({1'b0, 1'b1, iReg[0]}),.D1({3'b0}),.D2({~iReg[0], 1'b0, 1'b0}),.D3({3'b001}),.A1(iReg[2]),.B1(iReg[1]),.A0(~iReg[0]),.B0(iReg[2]),.out(convertedJ));
 
     C2Adder #(5) multiplyI5(.i1({2'b00, convertedI}), .i2({convertedI, 2'b00}), .o(iMult5));
     C2Adder #(5) indexAdder(.i1(iMult5), .i2({2'b00, convertedJ}), .o(memIdx));
@@ -93,7 +93,7 @@ module FDatapath ( // fpga implement of datapath
     C2Adder #(5) multiplyI3(.i1({1'b0, iReg, 1'b0}), .i2({2'b00, iReg}), .o(iMult3));
 
     assign iNextPosSaved = iNextPos;
-    S2 #(5) regTillPositive(.D0(5'b0),.D1(5'b0),.D2(iNextPosSaved),.D3(iNextPosAdd5),.A1(1'b1),.B1(1'b1),.A0(ldTillPositive),.B0(ldTillPositive),.CLR(rst),.clk(clk),.out(iNextPos));
+    S2 #(5) regTillPositive(.D0(5'd0),.D1(5'd0),.D2(iNextPosSaved),.D3(iNextPosAdd5),.A1(1'b1),.B1(1'b1),.A0(ldTillPositive),.B0(ldTillPositive),.CLR(rst),.clk(clk),.out(iNextPos));
 
     assign sign = iNextPosAdd5[4];
 
