@@ -77,13 +77,16 @@ module Controller (
 
     // Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
 
+    S2 #(4) update_state_s2(.D0(ns),.D1(ns),.D2(Start),.D3(Start),.A1(rst),.B1(rst),.A0(1'b0),.B0(1'b0),.CLR(rst),.clk(clk),.out(ps));
+
+
     always @(posedge clk, posedge rst) begin
         if(rst)begin
-            ps <= Start;
+            // ps <= Start;
             count2 <= 6'b000000;
         end
         else
-            ps <= ns;
+            // ps <= ns;
     end
 
     wire [5:0] sig;
