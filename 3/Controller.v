@@ -37,12 +37,11 @@ module Controller (
     
     input clk, rst;
     input start, sign3j, signeq, done, sign, eq;
-    reg [5:0] count2;
     input [5:0]count;
+    input [memsize-1:0]line;
 
     output reg IJen, ALUop, read, write, initLine, firstread;
     output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
-    input [memsize-1:0]line;
     output reg readLine, ok;
 
     parameter [3:0] 
@@ -66,29 +65,28 @@ module Controller (
     reg enCount=0, loadCount=0, first = 0;
     reg [5:0]loadInit = 0;
     wire [5:0]prevCounter, currCounter;
-    wire coutCount;
+    wire [5:0]count2, newCount2;
+    wire coutCount, coutCount2;
 
 
-    wire [3:0] ps, ns;
+    reg [3:0] ps, ns;
 
     S2 #(6) update_counter_s2(.D0(prevCounter),.D1(currCounter),.D2(loadInit),.D3(loadInit),.A1(loadCount),.B1(loadCount),.A0(enCount),.B0(enCount),.CLR(rst),.clk(clk),.out(prevCounter));
-
     C2Adder #(6) increase_counter_c2(.i1(prevCounter), .i2(6'd1), .o({coutCount, currCounter}));
 
     // Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
 
-    S2 #(4) update_state_s2(.D0(ns),.D1(ns),.D2(Start),.D3(Start),.A1(rst),.B1(rst),.A0(1'b0),.B0(1'b0),.CLR(rst),.clk(clk),.out(ps));
-    S2 #(6) update_counte2_s2(.D0(count2+1),.D1(count2+1),.D2(loadInit),.D3(loadInit),.A1(rst),.B1(rst),.A0(ps[0]&ps[1]&~ps[2]&~ps[3]),.B0(ps[0]&ps[1]&~ps[2]&~ps[3]),.CLR(rst),.clk(clk),.out(count2));
+    S2 #(6) update_counte2_s2(.D0(count2),.D1(newCount2),.D2(loadInit),.D3(loadInit),.A1(rst),.B1(rst),.A0(ps[0]&ps[1]&~ps[2]&~ps[3]),.B0(ps[0]&ps[1]&~ps[2]&~ps[3]),.CLR(rst),.clk(clk),.out(count2));
+    C2Adder #(6) increase_counter2_c2(.i1(count2), .i2(6'd1), .o({coutCount2, newCount2}));
 
-
-    // always @(posedge clk, posedge rst) begin
-    //     if(rst)begin
-    //         // ps <= Start;
-    //         // count2 <= 6'b000000;
-    //     end
-    //     else
-    //         // ps <= ns;
-    // end
+    always @(posedge clk, posedge rst) begin
+        if(rst)begin
+            ps <= Start;
+            // count2 <= 6'b000000;
+        end
+        else
+            ps <= ns;
+    end
 
     wire [5:0] sig;
     wire tmp;
@@ -97,23 +95,23 @@ module Controller (
 
     always @(ps, start, sign3j, signeq, done, sign, eq, tmp) begin
         case (ps)
-            Start:      ns <= start ? Idle : Start;
-            Idle:       ns <= Ydimension;
-            Ydimension: ns <= coutCount ? Ready : Line;
-            Line:       ns <= Store;
-            Store:      ns <= Shift3;
-            Shift3:     ns <= Sub3j;
-            Sub3j:      ns <= ~sign ? Add3j : Sub3j;
-            Add3j:      ns <= Arithmetic;
-            Arithmetic: ns <= Sub;
-            Sub:        ns <= Add;
-            Add:        ns <= Check;
-            Check:      ns <= Updater;
-            Prepared:   ns <= Next;
-            Updater:    ns <= ~done ? Shift3 : Prepared;
-            Next:       ns <= (~tmp) ? Next: Ydimension;
-            Ready:      ns <= Start;
-            default: ns <= Start;
+            Start:      ns = start ? Idle : Start;
+            Idle:       ns = Ydimension;
+            Ydimension: ns = coutCount ? Ready : Line;
+            Line:       ns = Store;
+            Store:      ns = Shift3;
+            Shift3:     ns = Sub3j;
+            Sub3j:      ns = ~sign ? Add3j : Sub3j;
+            Add3j:      ns = Arithmetic;
+            Arithmetic: ns = Sub;
+            Sub:        ns = Add;
+            Add:        ns = Check;
+            Check:      ns = Updater;
+            Prepared:   ns = Next;
+            Updater:    ns = ~done ? Shift3 : Prepared;
+            Next:       ns = (~tmp) ? Next: Ydimension;
+            Ready:      ns = Start;
+            default: ns = Start;
         endcase
     end
 
