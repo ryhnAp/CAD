@@ -10,25 +10,25 @@ z2
 cModel Technology
 dF:/semester6/CAD/hw/1/CAD-main/2
 vAdder
-Z0 !s110 1655303252
+Z0 !s110 1655304064
 !i10b 1
 !s100 5d8YfMJ8[XOP?k=fJc6O12
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Ib5P3mGS`GZTF79DhEJ6`R0
+IQK_83<m^o44aT>z_8f?fd0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3
-Z4 w1655296142
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Adder.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Adder.v
-!i122 320
+Z3 dF:/semester6/CAD/hw/3/code
+Z4 w1655303468
+8F:/semester6/CAD/hw/3/code/Adder.v
+FF:/semester6/CAD/hw/3/code/Adder.v
+!i122 340
 L0 2 15
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1655303252.000000
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Adder.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Adder.v|
+Z6 !s108 1655304064.000000
+!s107 F:/semester6/CAD/hw/3/code/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Adder.v|
 !i113 1
 Z7 o-work work
 Z8 tCvgOpt 0
@@ -38,21 +38,21 @@ R0
 !i10b 1
 !s100 L9O8fC1ZM[ef9JaW?zIhe1
 R1
-I7zVi0TA><fE4I>^<?3F=G2
+IJgD;aWY9z06J16XJPV>HP0
 R2
 R3
 R4
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/ALU.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/ALU.v
-!i122 321
+8F:/semester6/CAD/hw/3/code/ALU.v
+FF:/semester6/CAD/hw/3/code/ALU.v
+!i122 341
 Z9 L0 2 29
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/ALU.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/ALU.v|
+!s107 F:/semester6/CAD/hw/3/code/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/ALU.v|
 !i113 1
 R7
 R8
@@ -62,429 +62,429 @@ R0
 !i10b 1
 !s100 ?49kn9[bQEIMUTK8f?7eK0
 R1
-IIFz`5`^7LNS0Y7KlfhW^G3
+I_BjB<[`kn[dO^[QhYUYi;1
 R2
 R3
 R4
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C1.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C1.v
-!i122 322
+8F:/semester6/CAD/hw/3/code/C1.v
+FF:/semester6/CAD/hw/3/code/C1.v
+!i122 342
 L0 2 32
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C1.v|
+!s107 F:/semester6/CAD/hw/3/code/C1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/C1.v|
 !i113 1
 R7
 R8
 n@c1
 vC2
-Z10 !s110 1655303253
+Z10 !s110 1655304065
 !i10b 1
 !s100 ^3HQ=e]RUB`B7QJ[?DH8R0
 R1
-I4YJATCK2807iLe^cSEKAM2
+I;IehT7HNgGXnO;73GGmUS3
 R2
 R3
-w1655303243
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2.v
-!i122 323
+R4
+8F:/semester6/CAD/hw/3/code/C2.v
+FF:/semester6/CAD/hw/3/code/C2.v
+!i122 343
 R9
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2.v|
+!s107 F:/semester6/CAD/hw/3/code/C2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/C2.v|
 !i113 1
 R7
 R8
 n@c2
 vC2Adder
-R10
+!s110 1655315046
 !i10b 1
-!s100 Ezo7R:?QFnfXk;Q95nU8e0
+!s100 _5i4;:5O0i125kE@@;lWX2
 R1
-I2NMQ7<7hj2]Ribb2adkB43
+IYoJm0Ci^k32a;9_Uo6B<g2
 R2
 R3
-w1655301391
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2Adder.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2Adder.v
-!i122 324
+w1655315030
+8F:/semester6/CAD/hw/3/code/C2Adder.v
+FF:/semester6/CAD/hw/3/code/C2Adder.v
+!i122 364
 Z11 L0 2 27
 R5
 r1
 !s85 0
 31
-Z12 !s108 1655303253.000000
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2Adder.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/C2Adder.v|
+!s108 1655315045.000000
+!s107 F:/semester6/CAD/hw/3/code/C2Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/C2Adder.v|
 !i113 1
 R7
 R8
 n@c2@adder
 vController
-R10
+!s110 1655310289
 !i10b 1
-!s100 f=e5EIa`a78_n>cOJIokj3
+!s100 iH<C:e1KOz=X=B<2UzP5<3
 R1
-IBT:I2a`0hQCBFOHY0=Wkc3
+IEn1MhG`L]jBCHB?g`LNd?2
 R2
 R3
-Z13 w1655300666
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Controller.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Controller.v
-!i122 325
+w1655310282
+8F:/semester6/CAD/hw/3/code/Controller.v
+FF:/semester6/CAD/hw/3/code/Controller.v
+!i122 362
 L0 2 184
 R5
 r1
 !s85 0
 31
-R12
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Controller.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Controller.v|
+!s108 1655310289.000000
+!s107 F:/semester6/CAD/hw/3/code/Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Controller.v|
 !i113 1
 R7
 R8
 n@controller
 vCounter
-Z14 !s110 1655303254
+R10
 !i10b 1
 !s100 1PP<ADZRL]OaZiZ71eMk11
 R1
-IG`1Kh>H^nZaYH8o76BKFG2
+ImXl@>A_mjSfm?8@7GGH;z2
 R2
 R3
-Z15 w1655296143
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Counter.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Counter.v
-!i122 326
+R4
+8F:/semester6/CAD/hw/3/code/Counter.v
+FF:/semester6/CAD/hw/3/code/Counter.v
+!i122 346
 L0 2 30
 R5
 r1
 !s85 0
 31
-R12
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Counter.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Counter.v|
+Z12 !s108 1655304065.000000
+!s107 F:/semester6/CAD/hw/3/code/Counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Counter.v|
 !i113 1
 R7
 R8
 n@counter
 vDatapath
-R14
+R10
 !i10b 1
 !s100 bofCWh7YJb5=60>D?P[@P1
 R1
-ImZh6YWZ:Hefe<]cL=i`GH0
+IUD9@QkQ3@ZWXk1neR;hOj2
 R2
 R3
-w1655296562
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Datapath.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Datapath.v
-!i122 327
+R4
+8F:/semester6/CAD/hw/3/code/Datapath.v
+FF:/semester6/CAD/hw/3/code/Datapath.v
+!i122 347
 L0 2 116
 R5
 r1
 !s85 0
 31
-Z16 !s108 1655303254.000000
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Datapath.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Datapath.v|
+R12
+!s107 F:/semester6/CAD/hw/3/code/Datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Datapath.v|
 !i113 1
 R7
 R8
 n@datapath
 vFDatapath
-R14
+!s110 1655323129
 !i10b 1
 !s100 [Bk^W8]bHdISD2c4P=7kT2
 R1
-ILkWRk=H045`a^7FH8C`mc0
+I5ITbm4bEGkZQlBZ<A>DQK2
 R2
 R3
-w1655302028
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/FDatapath.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/FDatapath.v
-!i122 328
+w1655323123
+8F:/semester6/CAD/hw/3/code/FDatapath.v
+FF:/semester6/CAD/hw/3/code/FDatapath.v
+!i122 365
 L0 2 118
 R5
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/FDatapath.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/FDatapath.v|
+!s108 1655323129.000000
+!s107 F:/semester6/CAD/hw/3/code/FDatapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/FDatapath.v|
 !i113 1
 R7
 R8
 n@f@datapath
 vIJMux
-R14
+Z13 !s110 1655304066
 !i10b 1
 !s100 LSd=hZ:d=VOZ2ZIm>SQz[1
 R1
-I]Q?NCJdlDl7T@W>l[E9n@2
+IfO9I62Eb8Q8AN6kE5`_]l0
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/IJMux.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/IJMux.v
-!i122 329
+R4
+8F:/semester6/CAD/hw/3/code/IJMux.v
+FF:/semester6/CAD/hw/3/code/IJMux.v
+!i122 349
 R11
 R5
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/IJMux.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/IJMux.v|
+Z14 !s108 1655304066.000000
+!s107 F:/semester6/CAD/hw/3/code/IJMux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/IJMux.v|
 !i113 1
 R7
 R8
 n@i@j@mux
 vIniter
-Z17 !s110 1655303255
+R13
 !i10b 1
 !s100 P>6Tb`@o@;;<O1>L>LFgY1
 R1
-I0ek?21R=:KKEm[0?H];7R3
+I`AVCZVK18Ne7MWb?z5jbZ2
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Initer.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Initer.v
-!i122 330
+R4
+8F:/semester6/CAD/hw/3/code/Initer.v
+FF:/semester6/CAD/hw/3/code/Initer.v
+!i122 350
 L0 2 24
 R5
 r1
 !s85 0
 31
-R16
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Initer.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Initer.v|
+R14
+!s107 F:/semester6/CAD/hw/3/code/Initer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Initer.v|
 !i113 1
 R7
 R8
 n@initer
 vMemoryBlock
-R17
+R13
 !i10b 1
 !s100 @IY<4k<>HJAagBj9J0Kab1
 R1
-Ie;hjjJU@iAME<K=hT1ZN51
+IOaD3CNNJE=Sje4Z`gTRA`1
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/MemoryBlock.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/MemoryBlock.v
-!i122 331
+R4
+8F:/semester6/CAD/hw/3/code/MemoryBlock.v
+FF:/semester6/CAD/hw/3/code/MemoryBlock.v
+!i122 351
 L0 2 43
 R5
 r1
 !s85 0
 31
-Z18 !s108 1655303255.000000
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/MemoryBlock.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/MemoryBlock.v|
+R14
+!s107 F:/semester6/CAD/hw/3/code/MemoryBlock.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/MemoryBlock.v|
 !i113 1
 R7
 R8
 n@memory@block
 vMultiplexer
-R17
+R13
 !i10b 1
 !s100 6>b8QLQJ]fIMhJWO1<f0_0
 R1
-IADBD0oW_gM95SKB9jW9=Z0
+Io;TTHcUf^U`ebi5OEk_^R1
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Multiplexer.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Multiplexer.v
-!i122 332
+R4
+8F:/semester6/CAD/hw/3/code/Multiplexer.v
+FF:/semester6/CAD/hw/3/code/Multiplexer.v
+!i122 352
 L0 2 52
 R5
 r1
 !s85 0
 31
-R18
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Multiplexer.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Multiplexer.v|
+R14
+!s107 F:/semester6/CAD/hw/3/code/Multiplexer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Multiplexer.v|
 !i113 1
 R7
 R8
 n@multiplexer
 vMux
-R17
+Z15 !s110 1655304067
 !i10b 1
 !s100 QET_QRDYJd=j>k72j62UZ3
 R1
-I?]DElTlj`=5kej]EH[?483
+IbNioEZz=Ohif8df?z]h^_1
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Mux.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Mux.v
-!i122 333
-Z19 L0 2 18
+R4
+8F:/semester6/CAD/hw/3/code/Mux.v
+FF:/semester6/CAD/hw/3/code/Mux.v
+!i122 353
+Z16 L0 2 18
 R5
 r1
 !s85 0
 31
-R18
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Mux.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Mux.v|
+Z17 !s108 1655304067.000000
+!s107 F:/semester6/CAD/hw/3/code/Mux.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Mux.v|
 !i113 1
 R7
 R8
 n@mux
 vRegister
-Z20 !s110 1655303256
+R15
 !i10b 1
 !s100 CDDHfo8dSLzmhk`VD;5`f1
 R1
-IFZnUAOFa4H2T5TS30`K<23
+IUaVZaKH@8EdcFLRVOh6X[3
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Register.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Register.v
-!i122 334
-Z21 L0 2 26
+R4
+8F:/semester6/CAD/hw/3/code/Register.v
+FF:/semester6/CAD/hw/3/code/Register.v
+!i122 354
+Z18 L0 2 26
 R5
 r1
 !s85 0
 31
-R18
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Register.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Register.v|
+R17
+!s107 F:/semester6/CAD/hw/3/code/Register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Register.v|
 !i113 1
 R7
 R8
 n@register
 vS1
-R20
+R15
 !i10b 1
 !s100 9J7i7T1lLo1nea5M;@Bn41
 R1
-I8ZILKWm^ZdHfcZL^S3<[H0
+IPfTlEzCVh=JBKKdOo0M_c2
 R2
 R3
-R13
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S1.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S1.v
-!i122 335
+R4
+8F:/semester6/CAD/hw/3/code/S1.v
+FF:/semester6/CAD/hw/3/code/S1.v
+!i122 355
 L0 2 38
 R5
 r1
 !s85 0
 31
-Z22 !s108 1655303256.000000
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S1.v|
+R17
+!s107 F:/semester6/CAD/hw/3/code/S1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/S1.v|
 !i113 1
 R7
 R8
 n@s1
 vS2
-R20
+R15
 !i10b 1
 !s100 G[g^;PUJkMll]jYQ0HDCT1
 R1
-IDSg:Ej7V@4184FF[7kzL^0
+IXQA8k@EC>BLmfUlY7V@7n1
 R2
 R3
-w1655301915
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S2.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S2.v
-!i122 336
+R4
+8F:/semester6/CAD/hw/3/code/S2.v
+FF:/semester6/CAD/hw/3/code/S2.v
+!i122 356
 L0 2 39
 R5
 r1
 !s85 0
 31
-R22
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S2.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/S2.v|
+R17
+!s107 F:/semester6/CAD/hw/3/code/S2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/S2.v|
 !i113 1
 R7
 R8
 n@s2
 vShifter
-Z23 !s110 1655303257
+Z19 !s110 1655304068
 !i10b 1
 !s100 MU:Fn7TE3bEUfb8dQ8`lL1
 R1
-IQ9<QcF?:U9UeFo7e@f[Ad2
+IZlO[CVk6C>U2[CimE5L?@0
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Shifter.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Shifter.v
-!i122 337
-R21
+R4
+8F:/semester6/CAD/hw/3/code/Shifter.v
+FF:/semester6/CAD/hw/3/code/Shifter.v
+!i122 357
+R18
 R5
 r1
 !s85 0
 31
-R22
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Shifter.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Shifter.v|
+R17
+!s107 F:/semester6/CAD/hw/3/code/Shifter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Shifter.v|
 !i113 1
 R7
 R8
 n@shifter
 vSubtractor
-R23
+R19
 !i10b 1
 !s100 1InY^ERgW_]blGzAO6Qh21
 R1
-IZd5`j46ejS7Rl2gUDL;9D1
+I?FK31Bah@OdQid=3leQJU3
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Subtractor.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Subtractor.v
-!i122 338
-R19
+R4
+8F:/semester6/CAD/hw/3/code/Subtractor.v
+FF:/semester6/CAD/hw/3/code/Subtractor.v
+!i122 358
+R16
 R5
 r1
 !s85 0
 31
-Z24 !s108 1655303257.000000
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Subtractor.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/Subtractor.v|
+Z20 !s108 1655304068.000000
+!s107 F:/semester6/CAD/hw/3/code/Subtractor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/Subtractor.v|
 !i113 1
 R7
 R8
 n@subtractor
 vTB
-R23
+R19
 !i10b 1
 !s100 dj1e`:dFcYN4]?3Oi`84N1
 R1
-IgG95`4oXj8318kP7fV7^^0
+I4?a5aE4lKP[8zU9j<a_3l2
 R2
 R3
-R15
-8C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/TB.v
-FC:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/TB.v
-!i122 339
+R4
+8F:/semester6/CAD/hw/3/code/TB.v
+FF:/semester6/CAD/hw/3/code/TB.v
+!i122 359
 L0 4 116
 R5
 r1
 !s85 0
 31
-R24
-!s107 C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/TB.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/AryanSM/Desktop/Aryan/University/CAD/CAD/3/TB.v|
+R20
+!s107 F:/semester6/CAD/hw/3/code/TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|F:/semester6/CAD/hw/3/code/TB.v|
 !i113 1
 R7
 R8
