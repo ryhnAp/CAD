@@ -79,8 +79,6 @@ module Controller (
     S2 #(6) update_counter_s2(.D0(prevCounter),.D1(currCounter),.D2(loadInit),.D3(loadInit),.A1(loadCount),.B1(loadCount),.A0(enCount),.B0(enCount),.CLR(rst),.clk(clk),.out(prevCounter));
     C2Adder #(6) increase_counter_c2(.i1(prevCounter), .i2(6'd1), .o({coutCount, currCounter}));
 
-    // Counter #6 cc(.clk(clk), .rst(rst), .en(enCount), .ld(loadCount), .initld(loadInit), .co(coutCount));
-
     S2 #(6) update_counte2_s2(.D0(count2),.D1(newCount2),.D2(loadInit),.D3(loadInit),.A1(rst),.B1(rst),.A0(ps[0]&ps[1]&~ps[2]&~ps[3]),.B0(ps[0]&ps[1]&~ps[2]&~ps[3]),.CLR(rst),.clk(clk),.out(count2)); //A0(ps[0]&ps[1]&~ps[2]&~ps[3]) means it is line state and count2 needs to update
     C2Adder #(6) increase_counter2_c2(.i1(count2), .i2(6'd1), .o({coutCount2, newCount2}));
 
@@ -95,39 +93,8 @@ module Controller (
     S2 #(1) ns2_s2(.D0(ps[1]),.D1(((~done)&valBitxx01)|((~tmp)&valBitxx10)|(valBitxx00)),.D2((ps[1]&~(valBitxx10))|(coutCount&valBitxx10)),.D3(~andBit0and1),.A1(~ps[3]),.B1(1'b0),.A0(ps[2]),.B0(ps[2]),.CLR(rst),.clk(clk),.out(ps[2])); //
     S2 #(1) ns3_s2(.D0(1'b1),.D1((done&valBitxx01)|((~tmp)&valBitxx10)),.D2((ps[1]&~(valBitxx10))|(coutCount&valBitxx10)),.D3(andBit0and1),.A1(~ps[3]),.B1(1'b0),.A0(ps[2]),.B0(ps[2]),.CLR(rst),.clk(clk),.out(ps[3])); //
 
-    // always @(posedge clk, posedge rst) begin
-    //     if(rst)begin
-    //         ps <= Start;
-    //         // count2 <= 6'b000000;
-    //     end
-    //     else
-    //         ps <= ns;
-    // end
-
     assign sig = ~(count + ~count2 + 6'b000001);
     assign tmp = sig[5] & sig[4] & sig[3] & sig[2] & sig[1] & sig[0];
-
-    // always @(ps, start, sign3j, signeq, done, sign, eq, tmp) begin
-    //     case (ps)
-    //         Start:      ns = start ? Idle : Start;
-    //         Idle:       ns = Ydimension;
-    //         Ydimension: ns = coutCount ? Ready : Line;
-    //         Line:       ns = Store;
-    //         Store:      ns = Shift3;
-    //         Shift3:     ns = Sub3j;
-    //         Sub3j:      ns = ~sign ? Add3j : Sub3j;
-    //         Add3j:      ns = Arithmetic;
-    //         Arithmetic: ns = Sub;
-    //         Sub:        ns = Add;
-    //         Add:        ns = Check;
-    //         Check:      ns = Updater;
-    //         Prepared:   ns = Next;
-    //         Updater:    ns = ~done ? Shift3 : Prepared;
-    //         Next:       ns = (~tmp) ? Next: Ydimension;
-    //         Ready:      ns = Start;
-    //         default: ns = Start;
-    //     endcase
-    // end
 
     C2 #(1) ok_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&((~ps[2])|(ps[2]&ps[1]&(~ps[0])))),.B0(1'b1),.out(ok)); //A0(ps[3]&((~ps[2])|(ps[2]&ps[1]&(~ps[0])))) means it is sub|add|check|prepared|next state and ok needs to update
     C2 #(1) firstread_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[2]&(~ps[1])&(~ps[0])),.B0(1'b1),.out(firstread)); //A0(ps[3]&ps[2]&~ps[1]&~ps[0]) means it is store state and firstread needs to update
@@ -149,79 +116,46 @@ module Controller (
     C2 #(1) loadCount_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[0]&(~ps[3])&(~ps[2])&(~ps[1])),.B0(1'b1),.out(loadCount)); //A0(ps[0]&(~ps[3])&(~ps[2])&(~ps[1])) means it is idle state and loadCount needs to update
     C2 #(1) enCount_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0((~ps[2])&ps[3]&ps[1]&ps[0]),.B0(1'b1),.out(enCount)); //A0(ps[0]&(~ps[3])&(~ps[2])&(~ps[1])) means it is idle state and enCount needs to update
 
-
     always @(ps) begin
         {ldTillPositive, waitCalNexti} = 0;
         case (ps)
             Start:      begin
-                //nothing
             end
             Idle:       begin
-                // loadCount = 1'd1;
             end
             Ydimension: begin
-                //nothing
-                // readLine = 1'b1;
             end
             Line:       begin
-                // IJen = 1'b1;
-                // initLine = 1'b1;
-                // IJregen = 1'b1;
-                // count2 = count2 + 1;
             end
             Store:     begin
-                // writeVal = 1'b1;
-                // firstread = 1'b1;
             end
             Shift3:     begin
-                // writeMemReg = 1'b1;
                 ldTillPositive =1 'b1;
             end
             Sub3j:      begin
                 waitCalNexti = 1'b1;
                 ldTillPositive = sign;
-                // update = 1'b1;
             end
             Add3j:      begin
-                // IJregen = 1'b1;
-
             end
             Arithmetic: begin
-                // isArith = 1'b1;
             end
             Sub:        begin
-                // read = 1'b1;
-                // fbeq = 1'b1;
-                // ALUop =  1'b0;
-                // ok = 1'b1;
             end
             Add:        begin
-                // fbeq = 1'b1;
-                // ALUop =  1'b1;
-                // write = 1'b1;
-                // ok = 1'b1;
             end
             Check:      begin
-                // enable = 1'b1;
-                // ok = 1'b1;
             end
             Prepared:   begin
-                // ok = 1'b1;
-                // enCount = 1'b1;
             end
-            Store:      begin // fix algo
+            Store:      begin
             end
-            Updater:    begin
-                
+            Updater:    begin                
             end
             Next:       begin
-                // ok = 1'b1;
             end
             Ready:     begin
-                //nothing
             end 
         endcase
     end
-
-
 endmodule
