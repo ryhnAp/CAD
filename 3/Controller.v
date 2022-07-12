@@ -40,9 +40,10 @@ module Controller (
     input [5:0]count;
     input [memsize-1:0]line;
 
-    output reg IJen, ALUop, read, write, initLine, firstread;
-    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg, ldTillPositive;
-    output reg readLine, ok;
+    output reg IJen, ALUop, read, write, initLine, ldTillPositive;
+    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg;
+    output reg readLine;
+    output ok, firstread;
 
     parameter [3:0] 
         Start = 4'd0,       //0000
@@ -93,7 +94,6 @@ module Controller (
     S2 #(1) ns2_s2(.D0(ps[1]),.D1(((~done)&valBitxx01)|((~tmp)&valBitxx10)|(valBitxx00)),.D2((ps[1]&~(valBitxx10))|(coutCount&valBitxx10)),.D3(~andBit0and1),.A1(~ps[3]),.B1(1'b0),.A0(ps[2]),.B0(ps[2]),.CLR(rst),.clk(clk),.out(ps[2])); //
     S2 #(1) ns3_s2(.D0(1'b1),.D1((done&valBitxx01)|((~tmp)&valBitxx10)),.D2((ps[1]&~(valBitxx10))|(coutCount&valBitxx10)),.D3(andBit0and1),.A1(~ps[3]),.B1(1'b0),.A0(ps[2]),.B0(ps[2]),.CLR(rst),.clk(clk),.out(ps[3])); //
 
-
     // always @(posedge clk, posedge rst) begin
     //     if(rst)begin
     //         ps <= Start;
@@ -128,8 +128,13 @@ module Controller (
     //     endcase
     // end
 
+    C2 #(1) ok_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&((~ps[2])|(ps[2]&ps[1]&(~ps[0])))),.B0(1'b1),.out(ok)); //A0(ps[3]&((~ps[2])|(ps[2]&ps[1]&(~ps[0])))) means it is sub|add|check|prepared|next state and ok needs to update
+    C2 #(1) firstread_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[2]&(~ps[1])&(~ps[0])),.B0(1'b1),.out(firstread)); //A0(ps[3]&ps[2]&~ps[1]&~ps[0]) means it is store state and firstread needs to update
+    // C2 #(1) ldTillPositive_c2(.D0(1'b1),.D1(sign),.D2(1'b0),.D3(1'b0),.A1(~ps[2]|ps[3]|ps[1]),.B1(rst),.A0(ps[0]),.B0(1'b1),.out(ldTillPositive)); //A0(ps[0]) if it is one means it is sub3j otherwise it is shift3 if it isnt these states we have zero and ldTillPositive needs to update
+    
+
     always @(ps) begin
-        {ok, firstread, ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount} = 0;
+        {ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount} = 0;
         case (ps)
             Start:      begin
                 //nothing
@@ -149,7 +154,7 @@ module Controller (
             end
             Store:     begin
                 writeVal = 1'b1;
-                firstread = 1'b1;
+                // firstread = 1'b1;
             end
             Shift3:     begin
                 writeMemReg = 1'b1;
@@ -171,20 +176,20 @@ module Controller (
                 read = 1'b1;
                 fbeq = 1'b1;
                 ALUop =  1'b0;
-                ok = 1'b1;
+                // ok = 1'b1;
             end
             Add:        begin
                 fbeq = 1'b1;
                 ALUop =  1'b1;
                 write = 1'b1;
-                ok = 1'b1;
+                // ok = 1'b1;
             end
             Check:      begin
                 enable = 1'b1;
-                ok = 1'b1;
+                // ok = 1'b1;
             end
             Prepared:   begin
-                ok = 1'b1;
+                // ok = 1'b1;
                 enCount = 1'b1;
             end
             Store:      begin // fix algo
@@ -193,7 +198,7 @@ module Controller (
                 
             end
             Next:       begin
-                ok = 1'b1;
+                // ok = 1'b1;
             end
             Ready:     begin
                 //nothing
