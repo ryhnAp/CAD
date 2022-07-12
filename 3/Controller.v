@@ -41,9 +41,9 @@ module Controller (
     input [memsize-1:0]line;
 
     output reg IJen, ALUop, read, write, initLine, ldTillPositive;
-    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti, writeMemReg;
+    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti;
     output reg readLine;
-    output ok, firstread;
+    output ok, firstread, writeMemReg;
 
     parameter [3:0] 
         Start = 4'd0,       //0000
@@ -131,10 +131,12 @@ module Controller (
     C2 #(1) ok_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&((~ps[2])|(ps[2]&ps[1]&(~ps[0])))),.B0(1'b1),.out(ok)); //A0(ps[3]&((~ps[2])|(ps[2]&ps[1]&(~ps[0])))) means it is sub|add|check|prepared|next state and ok needs to update
     C2 #(1) firstread_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[2]&(~ps[1])&(~ps[0])),.B0(1'b1),.out(firstread)); //A0(ps[3]&ps[2]&~ps[1]&~ps[0]) means it is store state and firstread needs to update
     // C2 #(1) ldTillPositive_c2(.D0(1'b1),.D1(sign),.D2(1'b0),.D3(1'b0),.A1(~ps[2]|ps[3]|ps[1]),.B1(rst),.A0(ps[0]),.B0(1'b1),.out(ldTillPositive)); //A0(ps[0]) if it is one means it is sub3j otherwise it is shift3 if it isnt these states we have zero and ldTillPositive needs to update
+    C2 #(1) writeMemReg_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0((~ps[3])&ps[2]&(~ps[1])&(~ps[0])),.B0(1'b1),.out(writeMemReg)); //A0((~ps[3])&ps[2]&(~ps[1])&(~ps[0])) means it is shift3 state and writeMemReg needs to update
+    // C2 #(1) waitCalNexti_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0((~ps[3])&ps[2]&(~ps[1])&ps[0]),.B0(1'b1),.out(waitCalNexti)); //A0((~ps[3])&ps[2]&(~ps[1])&ps[0]) means it is sub3j state and waitCalNexti needs to update
     
 
     always @(ps) begin
-        {ldTillPositive, writeMemReg, first, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount} = 0;
+        {ldTillPositive, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount} = 0;
         case (ps)
             Start:      begin
                 //nothing
@@ -157,7 +159,7 @@ module Controller (
                 // firstread = 1'b1;
             end
             Shift3:     begin
-                writeMemReg = 1'b1;
+                // writeMemReg = 1'b1;
                 ldTillPositive =1 'b1;
             end
             Sub3j:      begin
