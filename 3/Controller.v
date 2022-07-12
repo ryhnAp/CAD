@@ -40,10 +40,11 @@ module Controller (
     input [5:0]count;
     input [memsize-1:0]line;
 
-    output reg IJen, ALUop, read, write, initLine, ldTillPositive;
-    output reg writeVal, IJregen, fbeq, fb3j, isArith, enable, update, waitCalNexti;
-    output reg readLine;
-    output ok, firstread, writeMemReg;
+    output reg ldTillPositive;
+    output reg fb3j, waitCalNexti;
+    output readLine;
+    output ok, firstread, writeMemReg, IJen, ALUop, read, write, initLine;
+    output update, enable, isArith, fbeq, IJregen, writeVal;
 
     parameter [3:0] 
         Start = 4'd0,       //0000
@@ -63,13 +64,13 @@ module Controller (
         Next = 4'd14,       //1110
         Ready = 4'd15;      //1111
 
-    reg enCount=0, loadCount=0, first = 0;
+    reg first = 0;
     reg [5:0]loadInit = 0;
     wire [5:0]prevCounter, currCounter;
     wire [5:0]count2, newCount2;
     wire coutCount, coutCount2;
     wire valBitxx01, valBitxx00, valBitxx10, xorBit0and1, andBit0and1;
-
+    wire enCount, loadCount;
     wire [5:0] sig;
     wire tmp;
 
@@ -133,29 +134,43 @@ module Controller (
     // C2 #(1) ldTillPositive_c2(.D0(1'b1),.D1(sign),.D2(1'b0),.D3(1'b0),.A1(~ps[2]|ps[3]|ps[1]),.B1(rst),.A0(ps[0]),.B0(1'b1),.out(ldTillPositive)); //A0(ps[0]) if it is one means it is sub3j otherwise it is shift3 if it isnt these states we have zero and ldTillPositive needs to update
     C2 #(1) writeMemReg_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0((~ps[3])&ps[2]&(~ps[1])&(~ps[0])),.B0(1'b1),.out(writeMemReg)); //A0((~ps[3])&ps[2]&(~ps[1])&(~ps[0])) means it is shift3 state and writeMemReg needs to update
     // C2 #(1) waitCalNexti_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0((~ps[3])&ps[2]&(~ps[1])&ps[0]),.B0(1'b1),.out(waitCalNexti)); //A0((~ps[3])&ps[2]&(~ps[1])&ps[0]) means it is sub3j state and waitCalNexti needs to update
-    
+    C2 #(1) IJen_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[1]&ps[0]&(~ps[3])&(~ps[2])),.B0(1'b1),.out(IJen)); //A0(ps[1]&ps[0]&~ps[3]&~ps[2]) means it is line state and IJen needs to update
+    C2 #(1) ALUop_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[0]&(~ps[2])&(~ps[1])),.B0(1'b1),.out(ALUop)); //A0(ps[3]&ps[0]&~ps[2]&~ps[1]) means it is add state and ALUop needs to update
+    C2 #(1) read_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&(~ps[0])&(~ps[2])&(~ps[1])),.B0(1'b1),.out(read)); //A0(ps[3]&(~ps[0])&(~ps[2])&(~ps[1])) means it is sub state and read needs to update
+    C2 #(1) write_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[0]&(~ps[2])&(~ps[1])),.B0(1'b1),.out(write)); //A0(ps[3]&ps[0]&~ps[2]&~ps[1]) means it is add state and write needs to update
+    C2 #(1) initLine_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[1]&ps[0]&(~ps[3])&(~ps[2])),.B0(1'b1),.out(initLine)); //A0(ps[1]&ps[0]&~ps[3]&~ps[2]) means it is line state and initLine needs to update
+    C2 #(1) writeVal_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[2]&(~ps[1])&(~ps[0])),.B0(1'b1),.out(writeVal)); //A0(ps[3]&ps[2]&~ps[1]&~ps[0]) means it is store state and writeVal needs to update
+    C2 #(1) IJregen_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[1]&(~ps[3])),.B0(1'b1),.out(IJregen)); //A0(ps[1]&(~ps[3])) means it is line|add3j state and IJregen needs to update
+    C2 #(1) fbeq_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&(~ps[2])&(~ps[1])),.B0(1'b1),.out(fbeq)); //A0(ps[3]&(~ps[2])&(~ps[1])) means it is add|sub state and fbeq needs to update
+    C2 #(1) isArith_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[0]&ps[1]&ps[2]&(~ps[3])),.B0(1'b1),.out(isArith)); //A0(ps[0]&ps[1]&ps[2]&(~ps[3])) means it is arithmetic state and isArith needs to update
+    C2 #(1) enable_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[3]&ps[1]&(~ps[2])&(~ps[0])),.B0(1'b1),.out(enable)); //A0(ps[3]&ps[1]&(~ps[2])&(~ps[0])) means it is check state and enable needs to update
+    C2 #(1) update_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[2]&ps[0]&(~ps[3])&(~ps[1])),.B0(1'b1),.out(update)); //A0(ps[2]&ps[0]&(~ps[3])&(~ps[1])) means it is sub3j state and update needs to update
+    C2 #(1) readLine_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[1]&(~ps[3])&(~ps[2])&(~ps[0])),.B0(1'b1),.out(readLine)); //A0(ps[1]&(~ps[3])&(~ps[2])&(~ps[0])) means it is ydimension state and readLine needs to update
+    C2 #(1) loadCount_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0(ps[0]&(~ps[3])&(~ps[2])&(~ps[1])),.B0(1'b1),.out(loadCount)); //A0(ps[0]&(~ps[3])&(~ps[2])&(~ps[1])) means it is idle state and loadCount needs to update
+    C2 #(1) enCount_c2(.D0(1'b0),.D1(1'b1),.D2(1'b0),.D3(1'b0),.A1(rst),.B1(rst),.A0((~ps[2])&ps[3]&ps[1]&ps[0]),.B0(1'b1),.out(enCount)); //A0(ps[0]&(~ps[3])&(~ps[2])&(~ps[1])) means it is idle state and enCount needs to update
+
 
     always @(ps) begin
-        {ldTillPositive, waitCalNexti, IJen, ALUop, read, write, initLine, writeVal, IJregen, fbeq, fb3j, isArith, enable, update, readLine, loadCount, enCount} = 0;
+        {ldTillPositive, waitCalNexti} = 0;
         case (ps)
             Start:      begin
                 //nothing
             end
             Idle:       begin
-                loadCount = 1'd1;
+                // loadCount = 1'd1;
             end
             Ydimension: begin
                 //nothing
-                readLine = 1'b1;
+                // readLine = 1'b1;
             end
             Line:       begin
-                IJen = 1'b1;
-                initLine = 1'b1;
-                IJregen = 1'b1;
+                // IJen = 1'b1;
+                // initLine = 1'b1;
+                // IJregen = 1'b1;
                 // count2 = count2 + 1;
             end
             Store:     begin
-                writeVal = 1'b1;
+                // writeVal = 1'b1;
                 // firstread = 1'b1;
             end
             Shift3:     begin
@@ -165,34 +180,34 @@ module Controller (
             Sub3j:      begin
                 waitCalNexti = 1'b1;
                 ldTillPositive = sign;
-                update = 1'b1;
+                // update = 1'b1;
             end
             Add3j:      begin
-                IJregen = 1'b1;
+                // IJregen = 1'b1;
 
             end
             Arithmetic: begin
-                isArith = 1'b1;
+                // isArith = 1'b1;
             end
             Sub:        begin
-                read = 1'b1;
-                fbeq = 1'b1;
-                ALUop =  1'b0;
+                // read = 1'b1;
+                // fbeq = 1'b1;
+                // ALUop =  1'b0;
                 // ok = 1'b1;
             end
             Add:        begin
-                fbeq = 1'b1;
-                ALUop =  1'b1;
-                write = 1'b1;
+                // fbeq = 1'b1;
+                // ALUop =  1'b1;
+                // write = 1'b1;
                 // ok = 1'b1;
             end
             Check:      begin
-                enable = 1'b1;
+                // enable = 1'b1;
                 // ok = 1'b1;
             end
             Prepared:   begin
                 // ok = 1'b1;
-                enCount = 1'b1;
+                // enCount = 1'b1;
             end
             Store:      begin // fix algo
             end

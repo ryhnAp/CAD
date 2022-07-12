@@ -103,12 +103,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Initer
 
-} {} {}} F:/semester6/CAD/hw/3/code/C2Adder.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/3/code/C2Adder.v
+} {} {}} F:/semester6/CAD/hw/3/code/FDatapath.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/3/code/FDatapath.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module C2Adder
+-- Compiling module FDatapath
 
 Top level modules:
-	C2Adder
+	FDatapath
 
 } {} {}} F:/semester6/CAD/hw/3/code/Shifter.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/3/code/Shifter.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -117,12 +117,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Shifter
 
-} {} {}} F:/semester6/CAD/hw/3/code/FDatapath.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/3/code/FDatapath.v
+} {} {}} F:/semester6/CAD/hw/3/code/C2Adder.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/3/code/C2Adder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module FDatapath
+-- Compiling module C2Adder
 
 Top level modules:
-	FDatapath
+	C2Adder
 
 } {} {}} F:/semester6/CAD/hw/3/code/TB.v {1 {vlog -work work -stats=none F:/semester6/CAD/hw/3/code/TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
