@@ -1,10 +1,11 @@
 # Permutation
-CA1 (computer assignment one) 
-    * Review on logic design:
-    * Implement Permutation func:
-        * 1.phase one: design of controller and datapath on paper
-        * 2.phase two: implement phase one with verilog
-        
+
+CA1 (computer assignment one) <br />
+&emsp; Review on logic design:<br />
+&emsp; Implement Permutation func:<br />
+&emsp;&emsp; 1.phase one: design of controller and datapath on paper<br />
+&emsp;&emsp; 2.phase two: implement phase one with verilog<br />
+
 ## How to run:
 - from `./code`
     *  1.Open this directory in ModelSim and add verilog codes `.v`
