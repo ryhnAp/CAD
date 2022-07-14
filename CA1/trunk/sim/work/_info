@@ -1,0 +1,374 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dF:/semester6/CAD/hw/1/trunk/sim
+vAdder
+Z1 !s10a 1649368690
+Z2 !s110 1649330200
+!i10b 1
+!s100 5d8YfMJ8[XOP?k=fJc6O12
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I5GRYGO5cmQa:IWfKK979I0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z5 w1649311972
+8../src/hdl/Adder.v
+F../src/hdl/Adder.v
+!i122 0
+L0 2 15
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1649330200.000000
+!s107 ../src/hdl/Adder.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Adder.v|
+!i113 1
+Z8 o+acc -source
+Z9 !s92 +acc -source +define+SIM
+Z10 tCvgOpt 0
+n@adder
+vALU
+R1
+R2
+!i10b 1
+!s100 L9O8fC1ZM[ef9JaW?zIhe1
+R3
+Ia4;4@e8Ccg_cH5CPSM<X:1
+R4
+R0
+R5
+8../src/hdl/ALU.v
+F../src/hdl/ALU.v
+!i122 1
+L0 2 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 ../src/hdl/ALU.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/ALU.v|
+!i113 1
+R8
+R9
+R10
+n@a@l@u
+vController
+R1
+Z11 !s110 1649371455
+!i10b 1
+!s100 iH<C:e1KOz=X=B<2UzP5<3
+R3
+I>ZihQlU;UbNB6eTTlXUER3
+R4
+R0
+Z12 w1649368690
+8../src/hdl/Controller.v
+F../src/hdl/Controller.v
+!i122 17
+L0 2 184
+R6
+r1
+!s85 0
+31
+Z13 !s108 1649371455.000000
+!s107 ../src/hdl/Controller.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Controller.v|
+!i113 1
+R8
+R9
+R10
+n@controller
+vCounter
+R1
+R11
+!i10b 1
+!s100 1PP<ADZRL]OaZiZ71eMk11
+R3
+ID3i]_0dbj;k;_784>A:XU0
+R4
+R0
+R12
+8../src/hdl/Counter.v
+F../src/hdl/Counter.v
+!i122 18
+L0 2 30
+R6
+r1
+!s85 0
+31
+R13
+!s107 ../src/hdl/Counter.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Counter.v|
+!i113 1
+R8
+R9
+R10
+n@counter
+vDatapath
+R1
+!s110 1649371456
+!i10b 1
+!s100 bofCWh7YJb5=60>D?P[@P1
+R3
+ICB3dnJQU86BzfPgZ7hUgE2
+R4
+R0
+R12
+8../src/hdl/Datapath.v
+F../src/hdl/Datapath.v
+!i122 19
+L0 2 116
+R6
+r1
+!s85 0
+31
+Z14 !s108 1649371456.000000
+!s107 ../src/hdl/Datapath.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Datapath.v|
+!i113 1
+R8
+R9
+R10
+n@datapath
+vIJMux
+R1
+Z15 !s110 1649330201
+!i10b 1
+!s100 LSd=hZ:d=VOZ2ZIm>SQz[1
+R3
+IBm31BT31IPWh<A;zi3Hd=0
+R4
+R0
+R5
+8../src/hdl/IJMux.v
+F../src/hdl/IJMux.v
+!i122 5
+Z16 L0 2 27
+R6
+r1
+!s85 0
+31
+Z17 !s108 1649330201.000000
+!s107 ../src/hdl/IJMux.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/IJMux.v|
+!i113 1
+R8
+R9
+R10
+n@i@j@mux
+vIniter
+R1
+R15
+!i10b 1
+!s100 P>6Tb`@o@;;<O1>L>LFgY1
+R3
+I@Hj=aOCS?Q]COei_MgEMa2
+R4
+R0
+R5
+8../src/hdl/Initer.v
+F../src/hdl/Initer.v
+!i122 6
+L0 2 24
+R6
+r1
+!s85 0
+31
+R17
+!s107 ../src/hdl/Initer.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Initer.v|
+!i113 1
+R8
+R9
+R10
+n@initer
+vMemoryBlock
+R1
+!s110 1649371457
+!i10b 1
+!s100 @IY<4k<>HJAagBj9J0Kab1
+R3
+IBe3COCQV_CBnLRVgdnZOK0
+R4
+R0
+R12
+8../src/hdl/MemoryBlock.v
+F../src/hdl/MemoryBlock.v
+!i122 20
+L0 2 43
+R6
+r1
+!s85 0
+31
+R14
+!s107 ../src/hdl/MemoryBlock.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/MemoryBlock.v|
+!i113 1
+R8
+R9
+R10
+n@memory@block
+vMultiplexer
+R1
+Z18 !s110 1649330202
+!i10b 1
+!s100 6>b8QLQJ]fIMhJWO1<f0_0
+R3
+I03bh7OFY8OkCWZUR7Vg2Q3
+R4
+R0
+R5
+8../src/hdl/Multiplexer.v
+F../src/hdl/Multiplexer.v
+!i122 8
+L0 2 52
+R6
+r1
+!s85 0
+31
+Z19 !s108 1649330202.000000
+!s107 ../src/hdl/Multiplexer.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Multiplexer.v|
+!i113 1
+R8
+R9
+R10
+n@multiplexer
+vMux
+R1
+R18
+!i10b 1
+!s100 QET_QRDYJd=j>k72j62UZ3
+R3
+I5hOYoPle3@5nWTo2jTen?3
+R4
+R0
+R5
+8../src/hdl/Mux.v
+F../src/hdl/Mux.v
+!i122 9
+Z20 L0 2 18
+R6
+r1
+!s85 0
+31
+R19
+!s107 ../src/hdl/Mux.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Mux.v|
+!i113 1
+R8
+R9
+R10
+n@mux
+vRegister
+R1
+R18
+!i10b 1
+!s100 3ieBA?0YPHgmYD1mKY]>a0
+R3
+IH2<;0[A<gNej^i<DaZblB2
+R4
+R0
+R5
+8../src/hdl/Register.v
+F../src/hdl/Register.v
+!i122 10
+R16
+R6
+r1
+!s85 0
+31
+R19
+!s107 ../src/hdl/Register.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Register.v|
+!i113 1
+R8
+R9
+R10
+n@register
+vShifter
+R1
+R18
+!i10b 1
+!s100 MU:Fn7TE3bEUfb8dQ8`lL1
+R3
+IRkY`@VAhBhaYWII6KUn:e2
+R4
+R0
+R5
+8../src/hdl/Shifter.v
+F../src/hdl/Shifter.v
+!i122 11
+L0 2 26
+R6
+r1
+!s85 0
+31
+R19
+!s107 ../src/hdl/Shifter.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Shifter.v|
+!i113 1
+R8
+R9
+R10
+n@shifter
+vSubtractor
+R1
+R18
+!i10b 1
+!s100 1InY^ERgW_]blGzAO6Qh21
+R3
+IM;Y^d_VHD5`JPb<IcGePP2
+R4
+R0
+R5
+8../src/hdl/Subtractor.v
+F../src/hdl/Subtractor.v
+!i122 12
+R20
+R6
+r1
+!s85 0
+31
+R19
+!s107 ../src/hdl/Subtractor.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+define+SIM|../src/hdl/Subtractor.v|
+!i113 1
+R8
+R9
+R10
+n@subtractor
+vTB
+!s110 1650871648
+!i10b 1
+!s100 K8MC47TzncTeP6Cdo?bSf3
+R3
+IBUH1o3>Mc9l5j`bcz;Qe:0
+R4
+R0
+w1650871547
+8./tb/TB.v
+F./tb/TB.v
+!i122 23
+L0 4 116
+R6
+r1
+!s85 0
+31
+!s108 1650871648.000000
+!s107 ./tb/TB.v|
+!s90 -reportprogress|300|+acc|-incr|-source|+incdir+../src/inc|+define+SIM|./tb/TB.v|
+!i113 1
+R8
+!s92 +acc -source +incdir+../src/inc +define+SIM
+R10
+n@t@b
